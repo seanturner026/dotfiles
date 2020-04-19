@@ -1,0 +1,1 @@
+/Users/sean/.oh-my-zsh/custom/themes/af-sean.zsh-theme

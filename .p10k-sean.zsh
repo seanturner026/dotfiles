@@ -1,0 +1,1 @@
+/Users/sean/.p10k-sean.zsh
