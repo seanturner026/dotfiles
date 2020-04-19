@@ -1,1 +1,2 @@
-/Users/sean/.vimrc
+syntax on
+colorscheme onedark

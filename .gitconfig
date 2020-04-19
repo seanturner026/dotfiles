@@ -1,0 +1,16 @@
+[user]
+    name = Sean Turner
+    email = sean.turner026@gmail.com
+
+[includeIf "gitdir:~/.hal/"]
+    path = ~/work/consegna/wcc/.gitconfig
+
+[includeIf "gitdir:~/work/consegna/"]
+    path = ~/work/consegna/wcc/.gitconfig
+
+[credential]
+	helper = !aws --profile nzqa codecommit credential-helper $@
+    UseHttpPath = true
+
+[color]
+    ui = true
