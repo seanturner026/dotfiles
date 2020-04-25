@@ -8,3 +8,5 @@ cp -f ~/.tigrc .tigrc
 cp -f ~/.tmux.conf .tmux.conf
 cp -f ~/.vimrc .vimrc
 cp -f ~/.zshrc .zshrc
+
+cp -f ~/Library/Application\ Support/Code/User/settings.json settings.json

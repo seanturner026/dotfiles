@@ -1,0 +1,127 @@
+{
+    "breadcrumbs.enabled": false,
+
+    "[dockerfile]": {
+        "editor.quickSuggestions": {
+            "comments": false,
+            "other": false,
+            "strings": false
+        },
+    },
+
+    "editor.cursorBlinking": "phase",
+    "editor.occurrencesHighlight": false,
+    "editor.matchBrackets": false,
+    "editor.minimap.enabled": false,
+    "editor.minimap.maxColumn": 200,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.showSlider": "always",
+    "editor.parameterHints.enabled": false,
+    "editor.renderWhitespace": "all",
+    "editor.suggestOnTriggerCharacters": false,
+
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
+
+    "extensions.ignoreRecommendations": true,
+
+
+    "files.associations": {
+        "Dockerfile.*": "dockerfile",
+        "*.yaml.gotmpl": "helm"
+    },
+    "files.insertFinalNewline": true,
+
+    "go.formatTool": "goimports",
+
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "material-icon-theme.folders.color": "#42a5f5",
+    "material-icon-theme.folders.theme": "classic",
+    "material-icon-theme.showReloadMessage": false,
+
+    "python.formatting.provider": "black",
+
+    "terminal.integrated.cwd": "/Users/seanturner",
+
+    "[terraform]": {
+        "editor.formatOnSave": true
+    },
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
+    },
+
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1a1d22",
+        "editor.background": "#262a31",
+        "editorIndentGuide.activeBackground": "#caced6",
+        "editorIndentGuide.background": "#3c4049",
+        "statusBar.background" : "#1A1A1A",
+        "statusBar.debuggingBackground": "#263238",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.noFolderBackground" : "#212121",
+    },
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.statusBar.visible": true,
+    "workbench.tree.indent": 16,
+
+    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+    "window.zoomLevel": 0,
+
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.insertSpaces": true,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": false
+        },
+        "editor.tabSize": 2,
+    },
+    "yaml.validate": false,
+}
