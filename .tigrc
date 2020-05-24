@@ -52,7 +52,7 @@
 
 set blame-view	= date:default author:full file-name:auto id:yes,color line-number:no,interval=5 text
 set grep-view	= file-name:no line-number:yes,interval=1 text
-set main-view	= line-number:no,interval=5 id:no date:default author:full commit-title:yes,graph,refs,overflow=no
+set main-view	= line-number:no,interval=5 id:yes date:no author:full commit-title:yes,graph,refs,overflow=no
 set refs-view	= date:default author:full ref commit-title
 set stash-view	= line-number:no,interval=5 id:no date:default author:full commit-title
 set status-view	= line-number:no,interval=5 status:short file-name
@@ -286,7 +286,7 @@ bind generic	v	show-version		# Show Tig version
 # Git automatically indents commit messages by four spaces.
 
 color "diff --"			yellow	default
-color "@@"			magenta	default
+color "@@"			blue	default
 color "+"			green	default
 color " +"			green	default
 color "-"			red	default
@@ -302,13 +302,13 @@ color "rename to "		yellow	default
 color "similarity "		yellow	default
 color "dissimilarity "		yellow	default
 color "diff-tree "		blue	default
-color "Author: "		cyan	default
-color "Commit: "		magenta	default
-color "Tagger: "		magenta	default
+color "Author: "		yellow	default
+color "Commit: "		078	default
+color "Tagger: "		032	default
 color "Merge: "			blue	default
 color "Date: "			yellow	default
 color "AuthorDate: "		yellow	default
-color "CommitDate: "		yellow	default
+color "CommitDate: "		078	default
 color "TaggerDate: "		yellow	default
 color "Refs: "			red	default
 color "Reflog: "		red	default
@@ -324,12 +324,12 @@ color "    Acked-by"		yellow	default
 color "    Tested-by"		yellow	default
 color "    Reviewed-by"		yellow	default
 color default			default	default	normal
-color cursor			white	green	bold
+color cursor			164	black	bold
 color status			green	default
 color delimiter			magenta	default
 color date			032	default
 color mode			cyan	default
-color id			magenta	default
+color id			032	default
 color overflow			red	default
 color header			yellow	default
 color section			cyan	default

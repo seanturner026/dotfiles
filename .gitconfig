@@ -14,3 +14,9 @@
 
 [color]
     ui = true
+
+[fetch]
+    prune = true
+
+[pull]
+    rebase = true

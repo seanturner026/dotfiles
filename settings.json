@@ -10,6 +10,7 @@
     },
 
     "editor.cursorBlinking": "phase",
+    "editor.definitionLinkOpensInPeek": true,
     "editor.occurrencesHighlight": false,
     "editor.matchBrackets": false,
     "editor.minimap.enabled": false,
@@ -25,7 +26,6 @@
     "explorer.openEditors.visible": 0,
 
     "extensions.ignoreRecommendations": true,
-
 
     "files.associations": {
         "Dockerfile.*": "dockerfile",
@@ -84,6 +84,16 @@
     "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
     "window.zoomLevel": 0,
 
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.insertSpaces": true,
+        "editor.quickSuggestions": {
+            "other": false,
+            "comments": false,
+            "strings": false
+        },
+        "editor.tabSize": 2,
+    },
     "yaml.customTags": [
         "!And",
         "!And sequence",
@@ -113,15 +123,5 @@
         "!Split",
         "!Split sequence"
     ],
-    "[yaml]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.insertSpaces": true,
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": false,
-            "strings": false
-        },
-        "editor.tabSize": 2,
-    },
-    "yaml.validate": false,
+    "yaml.validate": false
 }

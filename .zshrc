@@ -13,9 +13,15 @@ alias  .....="cd ../../../.."
 alias  ......="cd ../../../../.."
 alias  .......="cd ../../../../../.."
 
+alias bat="bat --theme=TwoDark"
+
+alias dg="d | grep"
 alias di="docker images"
 alias dritrm="docker run -it --rm"
 alias drmif="docker rmi -f"
+
+alias ecc="cp ~/python/github/dotfiles/.editorconfig ."
+alias eccf="cp -f ~/python/github/dotfiles/.editorconfig ."
 
 alias ga="git add"
 alias gb="git branch"
@@ -25,15 +31,19 @@ alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcmsg="git commit -m"
 alias gd="git diff"
+alias gfo="git fetch origin"
 alias gl="git log --format=format:'%C(auto)%h %C(green)%aN%Creset %s' --graph"
 alias gpap="git pull --all --prune"
 alias grai="git rebase --autosquash -i"
 alias gsl="git stash list"
 alias gspi="git stash pop --index"
 alias gss="git stash save"
+alias gss0="git stash show -p stash@{0} >~/.diff && vim ~/.diff"
+alias gss1="git stash show -p stash@{1} >~/.diff && vim ~/.diff"
+alias gss2="git stash show -p stash@{2} >~/.diff && vim ~/.diff"
 alias gst="git status"
 
-alias hgrep="history | grep"
+alias hg="history | grep"
 
 alias k="aws-vault exec wcc-terraform-shared-services -- kubectl"
 
@@ -72,10 +82,14 @@ alias klf="aws-vault exec wcc-terraform-shared-services -- kubectl logs -f"
 
 alias kns="aws-vault exec wcc-terraform-shared-services -- kubens"
 
+alias ls="ls -lhAGH"
+
+alias ng="cat ~/Dropbox/notes.md | grep"
+
 alias python="python3"
 alias pip="pip3"
 
-alias reload="source ~/.zshrc"
+alias rl="source ~/.zshrc"
 
 alias sls="serverless"
 alias slsd="serverless deploy"
