@@ -3,13 +3,13 @@
     email = sean.turner026@gmail.com
 
 [includeIf "gitdir:~/.hal/"]
-    path = ~/work/consegna/wcc/.gitconfig
+    path = ~/work/consegna/.gitconfig
 
-[includeIf "gitdir:~/work/consegna/"]
+[includeIf "gitdir:~/work/consegna/wcc/"]
     path = ~/work/consegna/wcc/.gitconfig
 
 [credential]
-	helper = !aws --profile nzqa codecommit credential-helper $@
+    helper = !aws --profile nzqa codecommit credential-helper $@
     UseHttpPath = true
 
 [color]
@@ -20,3 +20,4 @@
 
 [pull]
     rebase = true
+    autoStash = true

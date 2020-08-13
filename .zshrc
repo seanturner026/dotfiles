@@ -45,6 +45,8 @@ alias gst="git status"
 
 alias hg="history | grep"
 
+alias ip="curl -s icanhazip.com | pbcopy"
+
 alias k="aws-vault exec wcc-terraform-shared-services -- kubectl"
 
 alias kctx="aws-vault exec wcc-terraform-shared-services -- kubectx"
@@ -82,7 +84,13 @@ alias klf="aws-vault exec wcc-terraform-shared-services -- kubectl logs -f"
 
 alias kns="aws-vault exec wcc-terraform-shared-services -- kubens"
 
-alias ls="ls -lhAGH"
+alias ls="/usr/local/opt/coreutils/libexec/gnubin/ls \
+  -lhAGH \
+  --color=always \
+  -I .DS_Store \
+  -I .ipynb_checkpoints \
+  -I .vscode \
+  -I __pycache__"
 
 alias ng="cat ~/Dropbox/notes.md | grep"
 
@@ -95,10 +103,10 @@ alias sls="serverless"
 alias slsd="serverless deploy"
 alias slsws="serverless wsgi serve"
 
-alias t="tree -C -I '.git|__pycache__|node_modules|*.pyc|venv'"
-alias ta="tree -a -C -I '.git|__pycache__|node_modules|*.pyc|venv'"
-alias td="tree -d -C -I '.git|__pycache__|node_modules|*.pyc|venv'"
-alias tda="tree -d -a -C -I '.git|__pycache__|node_modules|*.pyc|venv'"
+alias t="tree -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
+alias ta="tree -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
+alias td="tree -d -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
+alias tda="tree -d -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
 
 alias tfa="aws-vault exec wcc-terraform -- terraform apply"
 alias tfc="aws-vault exec wcc-terraform -- terraform console"
@@ -121,4 +129,11 @@ export PATH="$HOME/.serverless/bin:$PATH"
 # brew
 export PATH="/usr/local/sbin:$PATH"
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export PIP_REQUIRE_VIRTUALENV=true
 source ~/.p10k-sean.zsh
