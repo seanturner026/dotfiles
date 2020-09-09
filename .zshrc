@@ -12,6 +12,8 @@ alias  ....="cd ../../.."
 alias  .....="cd ../../../.."
 alias  ......="cd ../../../../.."
 alias  .......="cd ../../../../../.."
+alias  ........="cd ../../../../../../.."
+alias  .........="cd ../../../../../../../.."
 
 alias bat="bat --theme=TwoDark"
 
@@ -27,14 +29,17 @@ alias ga="git add"
 alias gb="git branch"
 alias gbd="git branch -d"
 alias gbD="git branch -D"
+alias gcmsg="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-alias gcmsg="git commit -m"
 alias gd="git diff"
 alias gfo="git fetch origin"
 alias gl="git log --format=format:'%C(auto)%h %C(green)%aN%Creset %s' --graph"
 alias gpap="git pull --all --prune"
+alias gpo="git push origin"
 alias grai="git rebase --autosquash -i"
+alias gri="git rebase -i"
+alias gs="git show"
 alias gsl="git stash list"
 alias gspi="git stash pop --index"
 alias gss="git stash save"
@@ -47,42 +52,42 @@ alias hg="history | grep"
 
 alias ip="curl -s icanhazip.com | pbcopy"
 
-alias k="aws-vault exec wcc-terraform-shared-services -- kubectl"
+alias k="kubectl"
 
-alias kctx="aws-vault exec wcc-terraform-shared-services -- kubectx"
+alias kctx="kubectx"
 
-alias kdcm="aws-vault exec wcc-terraform-shared-services -- kubectl describe configmap"
-alias kdi="aws-vault exec wcc-terraform-shared-services -- kubectl describe ingress"
-alias kdelp="aws-vault exec wcc-terraform-shared-services -- kubectl delete pod"
-alias kdelpn="aws-vault exec wcc-terraform-shared-services -- kubectl delete pod --now"
-alias kdp="aws-vault exec wcc-terraform-shared-services -- kubectl describe pod"
-alias kds="aws-vault exec wcc-terraform-shared-services -- kubectl describe service"
-alias kdsa="aws-vault exec wcc-terraform-shared-services -- kubectl describe serviceaccount"
-alias kdsec="aws-vault exec wcc-terraform-shared-services -- kubectl describe secret"
+alias kdcm="kubectl describe configmap"
+alias kdelp="kubectl delete pod"
+alias kdelpn="kubectl delete pod --now"
+alias kdi="kubectl describe ingress"
+alias kdp="kubectl describe pod"
+alias kds="kubectl describe service"
+alias kdsa="kubectl describe serviceaccount"
+alias kdsec="kubectl describe secret"
 
-alias keit="aws-vault exec wcc-terraform-shared-services -- kubectl exec -it"
+alias keit="kubectl exec -it"
 
-alias kgcm="aws-vault exec wcc-terraform-shared-services -- kubectl get configmap"
-alias kgcmy="aws-vault exec wcc-terraform-shared-services -- kubectl get configmap -o yaml"
-alias kgd="aws-vault exec wcc-terraform-shared-services -- kubectl get deployment"
-alias kgdy="aws-vault exec wcc-terraform-shared-services -- kubectl get deployment -o yaml"
-alias kgi="aws-vault exec wcc-terraform-shared-services -- kubectl get ingress"
-alias kgiy="aws-vault exec wcc-terraform-shared-services -- kubectl get ingress -o yaml"
-alias kgp="aws-vault exec wcc-terraform-shared-services -- kubectl get pod"
-alias kgpw="aws-vault exec wcc-terraform-shared-services -- kubectl get pod -w"
-alias kgpy="aws-vault exec wcc-terraform-shared-services -- kubectl get pod -o yaml"
-alias kgn="aws-vault exec wcc-terraform-shared-services -- kubectl get node"
-alias kgs="aws-vault exec wcc-terraform-shared-services -- kubectl get service"
-alias kgsy="aws-vault exec wcc-terraform-shared-services -- kubectl get service -o yaml"
-alias kgsa="aws-vault exec wcc-terraform-shared-services -- kubectl get serviceaccount"
-alias kgsay="aws-vault exec wcc-terraform-shared-services -- kubectl get serviceaccount -o yaml"
-alias kgsec="aws-vault exec wcc-terraform-shared-services -- kubectl get secret"
-alias kgsecy="aws-vault exec wcc-terraform-shared-services -- kubectl get secret -o yaml"
+alias kgcm="kubectl get configmap"
+alias kgcmy="kubectl get configmap -o yaml"
+alias kgd="kubectl get deployment"
+alias kgdy="kubectl get deployment -o yaml"
+alias kgi="kubectl get ingress"
+alias kgiy="kubectl get ingress -o yaml"
+alias kgn="kubectl get node"
+alias kgp="kubectl get pod"
+alias kgpw="kubectl get pod -w"
+alias kgpy="kubectl get pod -o yaml"
+alias kgs="kubectl get service"
+alias kgsa="kubectl get serviceaccount"
+alias kgsay="kubectl get serviceaccount -o yaml"
+alias kgsec="kubectl get secret"
+alias kgsecy="kubectl get secret -o yaml"
+alias kgsy="kubectl get service -o yaml"
 
-alias kl="aws-vault exec wcc-terraform-shared-services -- kubectl logs"
-alias klf="aws-vault exec wcc-terraform-shared-services -- kubectl logs -f"
+alias kl="kubectl logs"
+alias klf="kubectl logs -f"
 
-alias kns="aws-vault exec wcc-terraform-shared-services -- kubens"
+alias kns="kubens"
 
 alias ls="/usr/local/opt/coreutils/libexec/gnubin/ls \
   -lhAGH \
@@ -94,8 +99,10 @@ alias ls="/usr/local/opt/coreutils/libexec/gnubin/ls \
 
 alias ng="cat ~/Dropbox/notes.md | grep"
 
-alias python="python3"
 alias pip="pip3"
+alias python="python3"
+alias pylc="cp ~/python/github/dotfiles/.pylintrc ."
+alias pylcf="cp -f ~/python/github/dotfiles/.pylintrc ."
 
 alias rl="source ~/.zshrc"
 
@@ -110,12 +117,25 @@ alias tda="tree -d -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_
 
 alias tfa="aws-vault exec wcc-terraform -- terraform apply"
 alias tfc="aws-vault exec wcc-terraform -- terraform console"
-alias tfi="aws-vault exec wcc-terraform -- terraform init"
+alias tfi="aws-vault exec wcc-terraform -- terraform import"
+alias tfinit="aws-vault exec wcc-terraform -- terraform init"
+alias tfo="aws-vault exec wcc-terraform -- terraform output"
 alias tfp="aws-vault exec wcc-terraform -- terraform plan"
+alias tfsl="aws-vault exec wcc-terraform -- terraform state list"
+alias tfsm="aws-vault exec wcc-terraform -- terraform state mv"
+alias tfsrm="aws-vault exec wcc-terraform -- terraform state rm"
+
+alias tfa13="aws-vault exec wcc-terraform -- terraform13 apply"
+alias tfc13="aws-vault exec wcc-terraform -- terraform13 console"
+alias tfi13="aws-vault exec wcc-terraform -- terraform13 import"
+alias tfinit13="aws-vault exec wcc-terraform -- terraform13 init"
+alias tfo13="aws-vault exec wcc-terraform -- terraform13 output"
+alias tfp13="aws-vault exec wcc-terraform -- terraform13 plan"
+alias tfsl13="aws-vault exec wcc-terraform -- terraform13 state list"
+alias tfsm13="aws-vault exec wcc-terraform -- terraform13 state mv"
+alias tfsrm13="aws-vault exec wcc-terraform -- terraform13 state rm"
 
 alias tmuxr="tmux source-file ~/.tmux.conf"
-
-alias venv="source venv/bin/activate"
 
 alias ytop="ytop -c solarized-dark"
 
@@ -126,8 +146,7 @@ export PROMPT_EOL_MARK=""
 export PATH="$HOME/.serverless/bin:$PATH"
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
-# brew
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"    # brew
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

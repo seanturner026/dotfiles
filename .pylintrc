@@ -1,0 +1,14 @@
+[BASIC]
+good-names=s3,
+           df,
+           ec2,
+           e
+
+[FORMAT]
+max-module-lines=1500
+
+[DESIGN]
+max-args=6 # Maximum number of arguments for function / method.
+
+disable=
+    logging-fstring-interpolation
