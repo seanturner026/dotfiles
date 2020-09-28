@@ -33,7 +33,27 @@
   "files.insertFinalNewline": true,
 
   "go.formatTool": "goimports",
-
+  "go.useLanguageServer": true,
+  "[go]": {
+      "editor.codeActionsOnSave": {
+          "source.organizeImports": true,
+      },
+      // Optional: Disable snippets, as they conflict with completion ranking.
+      "editor.snippetSuggestions": "none",
+  },
+  "[go.mod]": {
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+          "source.organizeImports": true,
+      },
+  },
+  "gopls": {
+      // Add parameter placeholders when completing a function.
+      "usePlaceholders": true,
+      // If true, enable additional analyses with staticcheck.
+      // Warning: This will significantly increase memory usage.
+      "staticcheck": false,
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -79,7 +99,7 @@
     },
     "editorPane.background": "#1e1e1e"
   },
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Atom One Dark",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.statusBar.visible": true,
@@ -130,7 +150,7 @@
   ],
   "yaml.validate": false,
   "codeui.targetingMode": "general",
-  "editor.quickSuggestionsDelay": 200,
+  "editor.quickSuggestionsDelay": 100,
   // "editor.renderLineHighlight": "none",
   "editor.selectionHighlight": false,
   "[jsonc]": {

@@ -19,26 +19,38 @@ alias bat="bat --theme=TwoDark"
 
 alias dg="d | grep"
 alias di="docker images"
+alias dk="docker kill"
 alias dritrm="docker run -it --rm"
 alias drmif="docker rmi -f"
+alias drmid="docker rmi $(docker images --filter 'dangling=true' -q --no-trunc)"
 
 alias ecc="cp ~/python/github/dotfiles/.editorconfig ."
 alias eccf="cp -f ~/python/github/dotfiles/.editorconfig ."
 
 alias ga="git add"
+
 alias gb="git branch"
 alias gbd="git branch -d"
 alias gbD="git branch -D"
+
 alias gcmsg="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
+
 alias gd="git diff"
+
 alias gfo="git fetch origin"
+
+alias ggu="go get -u"
+
 alias gl="git log --format=format:'%C(auto)%h %C(green)%aN%Creset %s' --graph"
+
 alias gpap="git pull --all --prune"
 alias gpo="git push origin"
+
 alias grai="git rebase --autosquash -i"
 alias gri="git rebase -i"
+
 alias gs="git show"
 alias gsl="git stash list"
 alias gspi="git stash pop --index"
@@ -123,21 +135,26 @@ alias tfo="aws-vault exec wcc-terraform -- terraform output"
 alias tfp="aws-vault exec wcc-terraform -- terraform plan"
 alias tfsl="aws-vault exec wcc-terraform -- terraform state list"
 alias tfsm="aws-vault exec wcc-terraform -- terraform state mv"
+alias tfsp="aws-vault exec wcc-terraform -- terraform state pull"
 alias tfsrm="aws-vault exec wcc-terraform -- terraform state rm"
+alias tfss="aws-vault exec wcc-terraform -- terraform state show"
 
-alias tfa13="aws-vault exec wcc-terraform -- terraform13 apply"
-alias tfc13="aws-vault exec wcc-terraform -- terraform13 console"
-alias tfi13="aws-vault exec wcc-terraform -- terraform13 import"
-alias tfinit13="aws-vault exec wcc-terraform -- terraform13 init"
-alias tfo13="aws-vault exec wcc-terraform -- terraform13 output"
-alias tfp13="aws-vault exec wcc-terraform -- terraform13 plan"
-alias tfsl13="aws-vault exec wcc-terraform -- terraform13 state list"
-alias tfsm13="aws-vault exec wcc-terraform -- terraform13 state mv"
-alias tfsrm13="aws-vault exec wcc-terraform -- terraform13 state rm"
+alias tfa12="aws-vault exec wcc-terraform -- terraform12 apply"
+alias tfc12="aws-vault exec wcc-terraform -- terraform12 console"
+alias tfi12="aws-vault exec wcc-terraform -- terraform12 import"
+alias tfinit12="aws-vault exec wcc-terraform -- terraform12 init"
+alias tfo12="aws-vault exec wcc-terraform -- terraform12 output"
+alias tfp12="aws-vault exec wcc-terraform -- terraform12 plan"
+alias tfsl12="aws-vault exec wcc-terraform -- terraform12 state list"
+alias tfsm12="aws-vault exec wcc-terraform -- terraform12 state mv"
+alias tfsp12="aws-vault exec wcc-terraform -- terraform12 state pull"
+alias tfss12="aws-vault exec wcc-terraform -- terraform12 state show"
 
 alias tmuxr="tmux source-file ~/.tmux.conf"
 
 alias ytop="ytop -c solarized-dark"
+
+alias zg="cat ~/.zshrc | grep"
 
 export DOCKER_BUILDKIT=1
 export PROMPT_EOL_MARK=""
