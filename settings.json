@@ -28,7 +28,8 @@
 
   "files.associations": {
     "Dockerfile.*": "dockerfile",
-    "*.yaml.gotmpl": "helm"
+    "*.yaml.gotmpl": "helm",
+    "*.tfvars": "terraform"
   },
   "files.insertFinalNewline": true,
 
