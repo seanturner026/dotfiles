@@ -19,7 +19,9 @@
   "editor.minimap.showSlider": "always",
   "editor.parameterHints.enabled": false,
   "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "top",
   "editor.suggestOnTriggerCharacters": false,
+  "editor.tabCompletion": "on",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
@@ -29,33 +31,35 @@
   "files.associations": {
     "Dockerfile.*": "dockerfile",
     "*.yaml.gotmpl": "helm",
-    "*.tfvars": "terraform"
+    "*.tfvars": "terraform",
+    "*.hcl": "terraform"
   },
   "files.insertFinalNewline": true,
 
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
   "[go]": {
-      "editor.codeActionsOnSave": {
-          "source.organizeImports": true,
-      },
-      // Optional: Disable snippets, as they conflict with completion ranking.
-      "editor.snippetSuggestions": "none",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    // Optional: Disable snippets, as they conflict with completion ranking.
+    "editor.snippetSuggestions": "none"
   },
   "[go.mod]": {
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-          "source.organizeImports": true,
-      },
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
   "gopls": {
-      // Add parameter placeholders when completing a function.
-      "usePlaceholders": true,
-      // If true, enable additional analyses with staticcheck.
-      // Warning: This will significantly increase memory usage.
-      "staticcheck": false,
+    // Add parameter placeholders when completing a function.
+    "usePlaceholders": true,
+    // If true, enable additional analyses with staticcheck.
+    // Warning: This will significantly increase memory usage.
+    "staticcheck": true
   },
   "[json]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
@@ -66,11 +70,15 @@
   "[python]": {
     "editor.formatOnSave": true
   },
-
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
 
-  "terminal.integrated.cwd": "/Users/seanturner",
+  "[ruby]": {
+    "editor.formatOnSave": true,
+  },
+  "ruby.format": "standard",
+  
+  "terminal.integrated.cwd": "/Users/sean",
 
   "[terraform]": {
     "editor.formatOnSave": true
@@ -82,36 +90,34 @@
 
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
-    "activityBar.background": "#1a1d22",
+    // "activityBar.background": "#1a1d22",
     "editor.background": "#1b1e23",
     "editorIndentGuide.activeBackground": "#caced6",
     "editorIndentGuide.background": "#3c4049",
-    "statusBar.background": "#1A1A1A",
-    "statusBar.debuggingBackground": "#263238",
+    "statusBar.background": "#0c334d",
+    // "statusBar.debuggingBackground": "#263238",
     "statusBar.foreground": "#ffffff",
-    "statusBar.noFolderBackground": "#212121",
+    // "statusBar.noFolderBackground": "#212121",
     "[Atom One Dark]": {
-      "editor.background": "#1b1e23",
-      "editor.foreground": "#aab2bf",
-      "tab.activeBackground": "#282c34",
-      "panel.background": "#1e1e1e",
-      "menu.background": "#242426",
-      "terminal.background": "#1e1e1e"
+      // "editor.background": "#1b1e23",
+      // "editor.foreground": "#aab2bf",
+      "tab.activeBackground": "#1e1f21",
+      // "panel.background": "#1e1e1e",
+      // "menu.background": "#242426",
+      // "terminal.background": "#1e1e1e"
     },
     "editorPane.background": "#1e1e1e"
   },
-  "workbench.colorTheme": "Atom One Dark",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 16,
 
   "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
-  "window.zoomLevel": 0,
 
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    // "editor.formatOnSave": true,
     "editor.insertSpaces": true,
     "editor.quickSuggestions": {
       "other": false,
@@ -150,11 +156,38 @@
     "!Split sequence"
   ],
   "yaml.validate": false,
-  "codeui.targetingMode": "general",
   "editor.quickSuggestionsDelay": 100,
-  // "editor.renderLineHighlight": "none",
   "editor.selectionHighlight": false,
-  "[jsonc]": {
+  "workbench.startupEditor": "none",
+  "[javascript]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "tabnine.hide_promotional_message": true,
+  "timeline.excludeSources": [],
+  "gitlens.codeLens.recentChange.command": false,
+  "gitlens.codeLens.authors.command": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.hovers.avatars": false,
+  "gitlens.codeLens.enabled": false,
+  "go.toolsManagement.autoUpdate": true,
+  "python.showStartPage": false,
+  "workbench.colorTheme": "Atom One Dark",
+  "window.zoomLevel": 1,
+  "aws.profile": "profile:default",
+  "workbench.editor.untitled.hint": "hidden"
 }

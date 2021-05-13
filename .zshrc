@@ -1,8 +1,16 @@
+# zmodload zsh/zprof
 export ZSH="/Users/sean/.oh-my-zsh"
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# plugins=(git)
+skip_global_compinit=1
 
 source $ZSH/oh-my-zsh.sh
 
@@ -18,6 +26,7 @@ alias  .........="cd ../../../../../../../.."
 alias bat="bat --theme=TwoDark"
 
 alias dg="d | grep"
+alias deit="docker exec -it"
 alias di="docker images"
 alias dil="docker images | sed -n '2p' | awk '{print \$3}' | pbcopy"
 alias dk="docker kill"
@@ -27,9 +36,8 @@ alias dpsl="docker ps | sed -n '2p' | awk '{print \$1}'"
 alias dritrm="docker run -it --rm"
 alias drmid="docker rmi $(docker images --filter 'dangling=true' -q --no-trunc)"
 alias drmif="docker rmi -f"
-
-alias ecc="cp ~/python/github/dotfiles/.editorconfig ."
-alias eccf="cp -f ~/python/github/dotfiles/.editorconfig ."
+alias ecc="cp ~/code/github/seanturner026/dotfiles/.editorconfig ."
+alias eccf="cp -f ~/code/github/seanturner026/dotfiles/.editorconfig ."
 
 alias ga="git add"
 
@@ -167,7 +175,12 @@ export PROMPT_EOL_MARK=""
 export PATH="$HOME/.serverless/bin:$PATH"
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
-export PATH="/usr/local/sbin:$PATH"    # brew
+# brew
+export PATH="/usr/local/sbin:$PATH"
+
+# go
+export GOBIN="$HOME/go/bin"
+export PATH="$GOBIN:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -177,3 +190,14 @@ fi
 
 export PIP_REQUIRE_VIRTUALENV=true
 source ~/.p10k-sean.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/sean/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sean/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/sean/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sean/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(rbenv init -)"
+
+# zprof
+
