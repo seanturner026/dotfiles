@@ -25,6 +25,8 @@ alias  .........="cd ../../../../../../../.."
 
 alias bat="bat --theme=TwoDark"
 
+alias cgpap="code . && git pull --all --prune"
+
 alias dg="d | grep"
 alias deit="docker exec -it"
 alias di="docker images"
@@ -43,11 +45,12 @@ alias ga="git add"
 
 alias gb="git branch"
 alias gbd="git branch -d"
-alias gbD="git branch -D"
+alias gbD="git for-each-ref --format='%(refname:short)' refs/heads | fzf -m | xargs git branch -D"
 
 alias gcmsg="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
+alias gcof="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
 
 alias gd="git diff"
 
@@ -58,7 +61,8 @@ alias ggu="go get -u"
 alias gl="git log --format=format:'%C(auto)%h %C(green)%aN%Creset %s' --graph"
 
 alias gpap="git pull --all --prune"
-alias gpo="git push origin"
+alias gpo="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git push origin"
+alias gpof="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git push -f origin"
 
 alias grai="git rebase --autosquash -i"
 alias gri="git rebase -i"
@@ -161,6 +165,7 @@ alias tfsl12="aws-vault exec wcc-terraform -- terraform12 state list"
 alias tfsm12="aws-vault exec wcc-terraform -- terraform12 state mv"
 alias tfsp12="aws-vault exec wcc-terraform -- terraform12 state pull"
 alias tfss12="aws-vault exec wcc-terraform -- terraform12 state show"
+alias tv="terraform validate"
 
 alias tmuxr="tmux source-file ~/.tmux.conf"
 
@@ -181,6 +186,7 @@ export PATH="/usr/local/sbin:$PATH"
 # go
 export GOBIN="$HOME/go/bin"
 export PATH="$GOBIN:$PATH"
+export GO111MODULE="on"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -201,3 +207,5 @@ eval "$(rbenv init -)"
 
 # zprof
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

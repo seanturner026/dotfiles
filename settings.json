@@ -92,6 +92,8 @@
   "workbench.colorCustomizations": {
     // "activityBar.background": "#1a1d22",
     "editor.background": "#1b1e23",
+    // "editorLineNumber.foreground": "#0c79a0",
+    // "editorLineNumber.activeForeground": "#555555",
     "editorIndentGuide.activeBackground": "#caced6",
     "editorIndentGuide.background": "#3c4049",
     "statusBar.background": "#0c334d",
@@ -163,12 +165,9 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -187,7 +186,16 @@
   "go.toolsManagement.autoUpdate": true,
   "python.showStartPage": false,
   "workbench.colorTheme": "Atom One Dark",
-  "window.zoomLevel": 1,
   "aws.profile": "profile:default",
-  "workbench.editor.untitled.hint": "hidden"
+  "workbench.editor.untitled.hint": "hidden",
+  "redhat.telemetry.enabled": false,
+  "docker.showStartPage": false,
+  "security.workspace.trust.enabled": false,
+  "window.zoomLevel": 1,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true
 }
