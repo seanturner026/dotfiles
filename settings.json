@@ -1,6 +1,4 @@
 {
-  "breadcrumbs.enabled": false,
-
   "[dockerfile]": {
     "editor.quickSuggestions": {
       "comments": false,
@@ -12,16 +10,18 @@
   "editor.cursorBlinking": "phase",
   "editor.definitionLinkOpensInPeek": true,
   "editor.occurrencesHighlight": false,
-  "editor.matchBrackets": false,
+  "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 200,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
-  "editor.parameterHints.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.snippetSuggestions": "top",
   "editor.suggestOnTriggerCharacters": false,
   "editor.tabCompletion": "on",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
@@ -35,6 +35,7 @@
     "*.hcl": "terraform"
   },
   "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
 
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
@@ -60,25 +61,30 @@
   },
   "[json]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
 
-  "material-icon-theme.folders.color": "#42a5f5",
-  "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.showReloadMessage": false,
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.saveFileAndSortImportsWhenPython",
+      "sequence": ["python.sortImports", "workbench.action.files.save"]
+    }
+  ],
 
   "[python]": {
     "editor.formatOnSave": true
   },
+  // "python.analysis.typeCheckingMode": "strict",
   "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
   "python.linting.enabled": true,
+  "python.formatting.blackPath": "/Users/seanturner/.local/bin/black",
 
   "[ruby]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
-  "ruby.format": "standard",
-  
-  "terminal.integrated.cwd": "/Users/sean",
+
+  "terminal.integrated.cwd": "/Users/seanturner",
 
   "[terraform]": {
     "editor.formatOnSave": true
@@ -87,8 +93,6 @@
     "external": true,
     "args": ["serve"]
   },
-
-  "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     // "activityBar.background": "#1a1d22",
     "editor.background": "#1b1e23",
@@ -103,7 +107,7 @@
     "[Atom One Dark]": {
       // "editor.background": "#1b1e23",
       // "editor.foreground": "#aab2bf",
-      "tab.activeBackground": "#1e1f21",
+      "tab.activeBackground": "#1e1f21"
       // "panel.background": "#1e1e1e",
       // "menu.background": "#242426",
       // "terminal.background": "#1e1e1e"
@@ -111,7 +115,7 @@
     "editorPane.background": "#1e1e1e"
   },
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "eq-material-theme-icons",
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 16,
 
@@ -120,7 +124,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     // "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
+    // "editor.insertSpaces": true,
     "editor.quickSuggestions": {
       "other": false,
       "comments": false,
@@ -185,17 +189,184 @@
   "gitlens.codeLens.enabled": false,
   "go.toolsManagement.autoUpdate": true,
   "python.showStartPage": false,
-  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "aws.profile": "profile:default",
   "workbench.editor.untitled.hint": "hidden",
   "redhat.telemetry.enabled": false,
   "docker.showStartPage": false,
   "security.workspace.trust.enabled": false,
-  "window.zoomLevel": 1,
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
   },
   "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true
+  "editor.glyphMargin": false,
+  "breadcrumbs.enabled": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false,
+    "python": false,
+    "terraform": false,
+    "go": false
+  },
+  "python.analysis.completeFunctionParens": true,
+  "cSpell.userWords": [
+    "admissionregistration",
+    "AIRTABLE",
+    "alertmanager",
+    "ALTMETRIC",
+    "AMSTEL",
+    "appyaml",
+    "appyml",
+    "arcname",
+    "argocd",
+    "argoproj",
+    "authz",
+    "automount",
+    "autoplan",
+    "autoscaler",
+    "awscli",
+    "Bamboohr",
+    "bootstrappers",
+    "boto",
+    "botocore",
+    "bugsnag",
+    "BUILDKIT",
+    "Burstable",
+    "CGWGE",
+    "checkstyle",
+    "circleci",
+    "colorama",
+    "concat",
+    "configmap",
+    "CPPFLAGS",
+    "dataclass",
+    "dbdocs",
+    "dbml",
+    "deadletter",
+    "deps",
+    "Djava",
+    "Dlog",
+    "Dnet",
+    "Dspark",
+    "emrcontainers",
+    "endfor",
+    "endraw",
+    "envfile",
+    "errorfactory",
+    "esac",
+    "Eventbridge",
+    "exasol",
+    "fargate",
+    "finalizer",
+    "finalizers",
+    "fips",
+    "fstest",
+    "GEMFURY",
+    "grafana",
+    "hashicorp",
+    "hdfs",
+    "heptio",
+    "hget",
+    "hmset",
+    "htmlcov",
+    "Infof",
+    "initdb",
+    "isort",
+    "istio",
+    "jdbc",
+    "jobrun",
+    "JOBUUID",
+    "jsonpath",
+    "junitxml",
+    "kaniko",
+    "karpenter",
+    "kube",
+    "kubeconfig",
+    "kubectl",
+    "kubernetes",
+    "kustomize",
+    "LDFLAGS",
+    "libmysqlclient",
+    "logrus",
+    "lpop",
+    "lstrip",
+    "maido",
+    "Mbps",
+    "mergeable",
+    "metastore",
+    "mkdir",
+    "mkdocs",
+    "nindent",
+    "nodegroup",
+    "OIDC",
+    "ondemand",
+    "openblas",
+    "pidfile",
+    "PIDS",
+    "pkgconfig",
+    "Popen",
+    "Pyenv",
+    "pyspark",
+    "pytest",
+    "radeon",
+    "readline",
+    "REPONAME",
+    "reviewdog",
+    "rolearn",
+    "rollouts",
+    "rpush",
+    "rtype",
+    "scaledown",
+    "SCALEFT",
+    "scard",
+    "scipy",
+    "selectattr",
+    "setenv",
+    "setuptools",
+    "sirupsen",
+    "sparksubmit",
+    "sqlalchemy",
+    "startswith",
+    "statefile",
+    "struct",
+    "sturner",
+    "subdirs",
+    "sumologic",
+    "templating",
+    "terratest",
+    "tfenv",
+    "tflint",
+    "tfstate",
+    "tfvars",
+    "tmpdir",
+    "tmpl",
+    "tolerations",
+    "usecase",
+    "vcore",
+    "vcores",
+    "venv",
+    "venvs",
+    "virtualenv",
+    "virtualenvs",
+    "WEBSERVER",
+    "xlarge"
+  ],
+  "cSpell.enableFiletypes": [
+    "!json",
+    "!vue"
+  ],
+  "editor.bracketPairColorization.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.visible": false,
+  "window.zoomLevel": 2
 }

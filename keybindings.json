@@ -7,6 +7,10 @@
     {
         "key": "shift+cmd+w",
         "command": "-workbench.action.closeWindow"
+    },
+    {
+        "command": "multiCommand.saveFileAndSortImportsWhenPython",
+        "key": "cmd+s",
+        "when": "resourceLangId == 'python'"
     }
-
 ]

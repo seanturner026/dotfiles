@@ -1,18 +1,6 @@
-# zmodload zsh/zprof
-export ZSH="/Users/sean/.oh-my-zsh"
+export ZSH="/Users/seanturner/.oh-my-zsh"
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-skip_global_compinit=1
-
-source $ZSH/oh-my-zsh.sh
+ZSH_THEME="custom/af-sean"
 
 alias  ..="cd .."
 alias  ...="cd ../.."
@@ -33,7 +21,9 @@ alias di="docker images"
 alias dil="docker images | sed -n '2p' | awk '{print \$3}' | pbcopy"
 alias dk="docker kill"
 alias dkl="docker ps | sed -n '2p' | awk '{print \$1}' | xargs docker kill"
+alias dl="docker logs"
 alias dps="docker ps"
+alias dpsa="docker ps -a"
 alias dpsl="docker ps | sed -n '2p' | awk '{print \$1}'"
 alias dritrm="docker run -it --rm"
 alias drmid="docker rmi $(docker images --filter 'dangling=true' -q --no-trunc)"
@@ -82,7 +72,7 @@ alias ip="curl -s icanhazip.com | pbcopy"
 
 alias k="kubectl"
 
-alias kctx="kubectx"
+alias kctx="kubectl ctx"
 
 alias kdcm="kubectl describe configmap"
 alias kdelp="kubectl delete pod"
@@ -103,6 +93,7 @@ alias kgi="kubectl get ingress"
 alias kgiy="kubectl get ingress -o yaml"
 alias kgn="kubectl get node"
 alias kgp="kubectl get pod"
+alias kgplc="kubectl get pod -o jsonpath='{.spec.containers[*].name}'"
 alias kgpw="kubectl get pod -w"
 alias kgpy="kubectl get pod -o yaml"
 alias kgs="kubectl get service"
@@ -115,20 +106,19 @@ alias kgsy="kubectl get service -o yaml"
 alias kl="kubectl logs"
 alias klf="kubectl logs -f"
 
-alias kns="kubens"
+alias kns="kubectl ns"
 
-alias ls="/usr/local/opt/coreutils/libexec/gnubin/ls \
+alias ls="/opt/homebrew/opt/coreutils/bin/gls \
   -lhAGH \
   --color=always \
   -I .DS_Store \
   -I .ipynb_checkpoints \
   -I .vscode \
   -I __pycache__"
+alias lsg="ls | grep"
 
 alias ng="cat ~/Dropbox/notes.md | grep"
 
-alias pip="pip3"
-alias python="python3"
 alias pylc="cp ~/python/github/dotfiles/.pylintrc ."
 alias pylcf="cp -f ~/python/github/dotfiles/.pylintrc ."
 
@@ -140,9 +130,16 @@ alias slsws="serverless wsgi serve"
 
 alias t="tree -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
 alias ta="tree -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
+alias tg="tree -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv' | grep"
+alias tag="tree -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv' | grep"
 alias td="tree -d -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
 alias tda="tree -d -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
+alias tdg="tree -d -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv' | grep"
+alias tdag="tree -d -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv' | grep"
 
+
+alias terraform="/opt/homebrew/Cellar/tfenv/2.2.3/bin/terraform"
+alias tf="/Users/seanturner/bin/terraform"
 alias tfa="aws-vault exec wcc-terraform -- terraform apply"
 alias tfc="aws-vault exec wcc-terraform -- terraform console"
 alias tfi="aws-vault exec wcc-terraform -- terraform import"
@@ -181,31 +178,36 @@ export PATH="$HOME/.serverless/bin:$PATH"
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
 # brew
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 # go
 export GOBIN="$HOME/go/bin"
 export PATH="$GOBIN:$PATH"
 export GO111MODULE="on"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 export PIP_REQUIRE_VIRTUALENV=true
-source ~/.p10k-sean.zsh
 
-# The next line updates PATH for the Google Cloud SDK.
+# Google Cloud SDK PATH
 if [ -f '/Users/sean/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sean/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
+# shell command completion for gcloud
 if [ -f '/Users/sean/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sean/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 eval "$(rbenv init -)"
 
-# zprof
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pipx
+export PATH="$PATH:/Users/seanturner/.local/bin"
+
+# krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# source /Users/seanturner/.doximity
+export PYENV_ROOT="$HOME/.pyenv/shims"
+export PATH="$PYENV_ROOT:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+
+### End of Zinit's installer chunk
+source ~/.zshenv
+source $ZSH/oh-my-zsh.sh
