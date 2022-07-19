@@ -1,0 +1,29 @@
+brew tap TylerBrock/saw
+
+brew install --cask aws-vault
+brew install argocd
+brew install awscli
+brew install coreutils
+brew install dive
+brew install fzf
+brew install gcc
+brew install go
+brew install helm
+brew install iamlive
+brew install jq
+brew install kubectl
+brew install mysql
+brew install mysql-client
+brew install pipx
+brew install pre-commit
+brew install pyenv
+brew install pyenv-virtualenv
+brew install rbenv
+brew install saw
+brew install stripe
+brew install terraform-docs
+brew install tfenv
+brew install tmux
+brew install tree
+brew install watch
+brew install wget
