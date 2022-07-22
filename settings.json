@@ -368,5 +368,12 @@
   "editor.bracketPairColorization.enabled": false,
   "workbench.sideBar.location": "right",
   "workbench.activityBar.visible": false,
-  "window.zoomLevel": 2
+  "window.zoomLevel": 2,
+  // "go.inlayHints.assignVariableTypes": true,
+  // "go.inlayHints.compositeLiteralFields": true,
+  // "go.inlayHints.compositeLiteralTypes": true,
+  // "go.inlayHints.constantValues": true,
+  "go.inlayHints.parameterNames": true,
+  // "go.inlayHints.functionTypeParameters": true,
+  // "go.inlayHints.rangeVariableTypes": true
 }
