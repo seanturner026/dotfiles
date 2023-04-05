@@ -9,8 +9,11 @@
         "command": "-workbench.action.closeWindow"
     },
     {
-        "command": "multiCommand.saveFileAndSortImportsWhenPython",
-        "key": "cmd+s",
-        "when": "resourceLangId == 'python'"
-    }
+        "key": "shift+alt+]",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "shift+alt+[",
+        "command": "workbench.action.increaseViewSize"
+    },
 ]

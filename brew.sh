@@ -1,29 +1,59 @@
 brew tap TylerBrock/saw
 
+brew install --cask 1password/tap/1password-cli
 brew install --cask aws-vault
-brew install argocd
-brew install awscli
-brew install coreutils
-brew install dive
-brew install fzf
-brew install gcc
-brew install go
-brew install helm
-brew install iamlive
-brew install jq
-brew install kubectl
-brew install mysql
-brew install mysql-client
-brew install pipx
-brew install pre-commit
-brew install pyenv
-brew install pyenv-virtualenv
-brew install rbenv
-brew install saw
-brew install stripe
-brew install terraform-docs
-brew install tfenv
-brew install tmux
-brew install tree
-brew install watch
-brew install wget
+brew install --cask libreoffice
+brew install --cask postman
+brew install --cask stats
+
+brew install argocd \
+    argoproj/tap/kubectl-argo-rollouts \
+    autojump \
+    awscli \
+    c-blosc \
+    circleci \
+    coreutils \
+    ctop \
+    derailed/k9s/k9s \
+    dive \
+    ffmpeg \
+    fzf \
+    gcc \
+    gdal \
+    gh \
+    go \
+    graphviz \
+    hdf5 \
+    helm \
+    iam-policy-json-to-terraform \
+    iann0036/iamlive/iamlive \
+    jq \
+    kind \
+    kubectl \
+    kubectx \
+    kustomize \
+    mysql \
+    mysql-client \
+    neovim \
+    pipx \
+    postgresql \
+    pre-commit \
+    pyenv \
+    pyenv-virtualenv \
+    rbenv \
+    ripgrep \
+    ripgrep \
+    rust \
+    saw \
+    terraform-docs \
+    tfenv \
+    tflint \
+    tfmigrate \
+    tfsec \
+    tmux \
+    tree \
+    vault \
+    watch \
+    wget \
+    ykman \
+    yq

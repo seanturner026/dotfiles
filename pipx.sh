@@ -1,0 +1,9 @@
+pipx install black
+pipx install cfn-lint
+pipx install coiled
+pipx install docutils
+pipx install hardeneks
+pipx install isort
+pipx install kube-shell
+pipx install pip-tools
+pipx install voila
