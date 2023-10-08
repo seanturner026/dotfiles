@@ -19,7 +19,6 @@ alias deit="docker exec -it"
 alias di="docker images"
 alias dil="docker images | sed -n '2p' | awk '{print \$3}' | pbcopy"
 alias dk="docker kill"
-alias dka="docker ps | tail -n +2 | awk '{print $1}' | xargs docker kill"
 alias dl="docker logs"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
@@ -27,6 +26,7 @@ alias dpsl="docker ps | sed -n '2p' | awk '{print \$1}'"
 alias dritrm="docker run -it --rm"
 alias drmid="docker rmi $(docker images --filter 'dangling=true' -q --no-trunc)"
 alias drmif="docker rmi -f"
+alias dsa="docker ps -q | xargs docker stop"
 
 alias ecc="cp ~/code/github/seanturner026/dotfiles/.editorconfig ."
 alias eccf="cp -f ~/code/github/seanturner026/dotfiles/.editorconfig ."
@@ -51,7 +51,8 @@ alias ggu="go get -u"
 alias gl="git log --format=format:'%C(auto)%h %C(green)%aN%Creset %s' --graph"
 
 alias gpap="git pull --all --prune"
-alias gpo="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git push origin"
+alias gpsu="git push --set-upstream origin"
+alias gpo="git push origin"
 alias gpof="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git push -f origin"
 
 alias grai="git rebase --autosquash -i"
@@ -119,7 +120,7 @@ alias ls="/opt/homebrew/opt/coreutils/bin/gls \
 alias lsg="ls | grep"
 
 alias ng="cat ~/Dropbox/notes.md | grep"
-
+alias npw="python -c \"import string; import random; print(''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=30)))\" | pbcopy"
 alias pylc="cp ~/python/github/dotfiles/.pylintrc ."
 alias pylcf="cp -f ~/python/github/dotfiles/.pylintrc ."
 
@@ -139,12 +140,12 @@ alias tdag="tree -d -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node
 alias tdg="tree -d -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv' | grep"
 alias tg="tree -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv' | grep"
 
-
 alias tf="terraform"
 alias tfa="terraform apply"
 alias tfc="terraform console"
-alias tfi="terraform import"
-alias tfinit="terraform init"
+alias tfi="terraform init"
+alias tfims="terraform init -migrate-state"
+alias tfiu="terraform init -upgrade"
 alias tfo="terraform output"
 alias tfp="terraform plan"
 alias tfsl="terraform state list"
@@ -152,9 +153,14 @@ alias tfsm="terraform state mv"
 alias tfsp="terraform state pull"
 alias tfsrm="terraform state rm"
 alias tfss="terraform state show"
-alias tv="terraform validate"
+alias tfv="terraform validate"
+alias tfwl="terraform workspace list"
+alias tfwn="terraform workspace new"
+alias tfws="terraform workspace select"
 
 alias tmuxr="tmux source-file ~/.tmux.conf"
+
+alias vim="nvim"
 
 alias ytop="ytop -c solarized-dark"
 

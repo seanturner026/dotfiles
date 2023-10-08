@@ -9,20 +9,26 @@ brew install --cask stats
 brew install argocd \
     argoproj/tap/kubectl-argo-rollouts \
     autojump \
+    aws/tap/aws-sam-cli \
     awscli \
     c-blosc \
+    cilium-cli \
     circleci \
     coreutils \
     ctop \
+    depot/tap/depot \
     derailed/k9s/k9s \
     dive \
     ffmpeg \
+    flyctl \
     fzf \
     gcc \
     gdal \
     gh \
+    git-lfs \
     go \
     graphviz \
+    hadolint \
     hdf5 \
     helm \
     iam-policy-json-to-terraform \
@@ -31,10 +37,12 @@ brew install argocd \
     kind \
     kubectl \
     kubectx \
+    kubeshop/monokle/monokle-cli\
     kustomize \
     mysql \
     mysql-client \
     neovim \
+    netlify-cli \
     pipx \
     postgresql \
     pre-commit \
@@ -42,9 +50,9 @@ brew install argocd \
     pyenv-virtualenv \
     rbenv \
     ripgrep \
-    ripgrep \
     rust \
     saw \
+    telnet \
     terraform-docs \
     tfenv \
     tflint \
@@ -55,5 +63,6 @@ brew install argocd \
     vault \
     watch \
     wget \
+    wireshark \
     ykman \
     yq

@@ -7,10 +7,11 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export ZSH="$HOME/.oh-my-zsh"
 
+export PATH="/Users/sean/.cargo/bin:$PATH"
 export PATH="/Users/sean/.local/bin:$PATH"
 export PATH="/Users/sean/go/bin:$PATH"
-export PATH="$PYENV_ROOT:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$PYENV_ROOT:$PATH"
 
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 

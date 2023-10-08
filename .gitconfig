@@ -51,3 +51,5 @@
     autoCorrect = immediate
 [merge]
     conflictstyle = diff3
+[core]
+	editor = '/opt/homebrew/bin/nvim' -n -w

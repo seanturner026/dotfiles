@@ -1,7 +1,9 @@
+pipx install 'awscli-local[ver1]'
 pipx install black
 pipx install cfn-lint
 pipx install coiled
 pipx install docutils
+pipx install ec2instanceconnectcli
 pipx install hardeneks
 pipx install isort
 pipx install kube-shell

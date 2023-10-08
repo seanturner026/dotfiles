@@ -9,6 +9,7 @@ format = '$aws$kubernetes$directory$git_branch$git_commit$git_state$git_status$c
 
 [aws]
 format = '[$symbol($profile )](172)'
+force_display = true
 symbol = '☁️  '
 
 [character]
@@ -50,7 +51,7 @@ ignore_submodules = false
 modified = '!'
 renamed = '»'
 staged = '+'
-stashed = '\\$'
+stashed = '\$'
 style = 'red bold'
 untracked = '?'
 up_to_date = ''
@@ -75,7 +76,7 @@ disabled = true
 disabled = true
 
 [python]
-disabled = true
+disabled = false
 symbol = 'py'
 version_format = ' v${raw}'
 style = '33 bold'
