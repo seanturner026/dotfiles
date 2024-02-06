@@ -4,8 +4,9 @@ brew install --cask 1password/tap/1password-cli
 brew install --cask aws-vault
 brew install --cask libreoffice
 brew install --cask postman
+brew install --cask rectangle
 brew install --cask stats
-
+brew tap homebrew/cask-fonts
 brew install argocd \
     argoproj/tap/kubectl-argo-rollouts \
     autojump \
@@ -21,6 +22,7 @@ brew install argocd \
     dive \
     ffmpeg \
     flyctl \
+    fsouza/prettierd/prettierd \
     fzf \
     gcc \
     gdal \
@@ -34,6 +36,7 @@ brew install argocd \
     iam-policy-json-to-terraform \
     iann0036/iamlive/iamlive \
     jq \
+    k3d \
     kind \
     kubectl \
     kubectx \
@@ -43,6 +46,7 @@ brew install argocd \
     mysql-client \
     neovim \
     netlify-cli \
+    php \
     pipx \
     postgresql \
     pre-commit \
@@ -52,6 +56,7 @@ brew install argocd \
     ripgrep \
     rust \
     saw \
+    tailwindcss \
     telnet \
     terraform-docs \
     tfenv \

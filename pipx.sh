@@ -1,4 +1,3 @@
-pipx install 'awscli-local[ver1]'
 pipx install black
 pipx install cfn-lint
 pipx install coiled
