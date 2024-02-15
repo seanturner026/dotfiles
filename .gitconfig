@@ -51,5 +51,11 @@
     autoCorrect = immediate
 [merge]
     conflictstyle = diff3
-[core]
-	editor = '/opt/homebrew/bin/nvim' -n -w
+[alias]
+	pushb = !git push origin \"$(git rev-parse --abbrev-ref HEAD)\"
+	pullb = !git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -23,7 +23,7 @@
   ],
   "editor.cursorBlinking": "phase",
   "editor.definitionLinkOpensInPeek": true,
-  "editor.occurrencesHighlight": false,
+  "editor.occurrencesHighlight": "off",
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 200,
@@ -98,25 +98,26 @@
   // ],
 
   "[python]": {
-    // "editor.formatOnSave": true,
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     },
     "editor.formatOnType": true
   },
-  "autoDocstring.docstringFormat": "sphinx",
+  "mypy-type-checker.importStrategy": "fromEnvironment",
+  "autoDocstring.docstringFormat": "sphinx-notypes",
   "autoDocstring.startOnNewLine": true,
+  "black-formatter.args": ["--config", "pyproject.toml", "--preview"],
   "black-formatter.importStrategy": "fromEnvironment",
-  "editor.codeActionsOnSave": { "source.organizeImports": true },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
   "flake8.args": ["--config=setup.cfg"],
   "flake8.importStrategy": "fromEnvironment",
   // "python.analysis.typeCheckingMode": "strict", // "basic"
   "python.formatting.blackArgs": ["--config", "pyproject.toml", "--preview"],
   "python.languageServer": "Pylance",
-  "python.linting.flake8Args": ["--max-line-length=120"],
-  "python.linting.flake8Enabled": true,
-  "python.linting.mypyEnabled": true,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   // "python.formatting.blackPath": "/Users/sean/.local/bin/black",
@@ -210,7 +211,6 @@
   "python.showStartPage": false,
   "workbench.colorTheme": "One Dark Pro Darker",
   "aws.profile": "profile:default",
-  "workbench.editor.untitled.hint": "hidden",
   "redhat.telemetry.enabled": false,
   "docker.showStartPage": false,
   "security.workspace.trust.enabled": false,
@@ -401,6 +401,7 @@
     "jsonpath",
     "junitxml",
     "jupyterhub",
+    "jupyterlab",
     "Kalulushi",
     "kaniko",
     "karpenter",
@@ -457,6 +458,7 @@
     "Pagerduty",
     "persistentvolumeclaims",
     "persistentvolumes",
+    "pgactive",
     "PGDATA",
     "PGHOST",
     "PGPASSWORD",
@@ -521,6 +523,7 @@
     "startswith",
     "statefile",
     "statefulsets",
+    "STIG",
     "storageclasses",
     "struct",
     "sturner",
@@ -528,6 +531,8 @@
     "sumologic",
     "tailnet",
     "Tailscale",
+    "tailscaled",
+    "tailwindcss",
     "templating",
     "terrashed",
     "terratest",
@@ -556,11 +561,13 @@
     "virtualenv",
     "virtualenvs",
     "voxel",
+    "vpcresources",
     "webhookcertificates",
     "WEBSERVER",
     "WEBTOOLS",
     "xlarge",
     "xraster",
+    "yubikey",
     "zarr",
     "zccm"
   ],
@@ -584,14 +591,19 @@
   "git.openRepositoryInParentFolders": "always",
   "aws.telemetry": false,
   "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
-  "workbench.activityBar.visible": false,
   "githubPullRequests.pullBranch": "never",
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.zoomLevel": 2,
   "breadcrumbs.enabled": false,
-  "workbench.editor.empty.hint": "hidden"
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.activityBar.location": "hidden",
+  "[go][go.mod][python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  }
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.variableTypes": true
   // "go.inlayHints.functionTypeParameters": true,

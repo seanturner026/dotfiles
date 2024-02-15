@@ -51,8 +51,8 @@ alias ggu="go get -u"
 alias gl="git log --format=format:'%C(auto)%h %C(green)%aN%Creset %s' --graph"
 
 alias gpap="git pull --all --prune"
-alias gpsu="git push --set-upstream origin"
-alias gpo="git push origin"
+alias gplb="git pullb"
+alias gphb="git pushb"
 alias gpof="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git push -f origin"
 
 alias grai="git rebase --autosquash -i"
@@ -119,8 +119,10 @@ alias ls="/opt/homebrew/opt/coreutils/bin/gls \
   -I __pycache__"
 alias lsg="ls | grep"
 
+alias n="nvim"
 alias ng="cat ~/Dropbox/notes.md | grep"
 alias npw="python -c \"import string; import random; print(''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=30)))\" | pbcopy"
+
 alias pylc="cp ~/python/github/dotfiles/.pylintrc ."
 alias pylcf="cp -f ~/python/github/dotfiles/.pylintrc ."
 
@@ -159,8 +161,6 @@ alias tfwn="terraform workspace new"
 alias tfws="terraform workspace select"
 
 alias tmuxr="tmux source-file ~/.tmux.conf"
-
-alias vim="nvim"
 
 alias ytop="ytop -c solarized-dark"
 

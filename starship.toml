@@ -4,13 +4,13 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
-format = '$aws$kubernetes$directory$git_branch$git_commit$git_state$git_status$character'
+format = '$aws$kubernetes$golang$python$directory$git_branch$git_commit$git_state$git_status$character'
 
 
 [aws]
 format = '[$symbol($profile )](172)'
 force_display = true
-symbol = '☁️  '
+symbol = '󰸏 '
 
 [character]
 success_symbol = ' [»](105 bold)'
@@ -24,7 +24,7 @@ truncation_length = 111111
 
 [git_branch]
 symbol = ''
-format =  '[\(](68)[$symbol$branch](42)[\)](68)'
+format = '[\(](68)[$symbol$branch](42)[\)](68)'
 truncation_length = 100000
 truncation_symbol = ''
 ignore_branches = []
@@ -57,14 +57,16 @@ untracked = '?'
 up_to_date = ''
 
 [golang]
-disabled = true
-symbol = 'go '
-style = '122'
+disabled = false
+format = '[$symbol($version )]($style)'
+symbol = ' '
+style = '31'
 
 [kubernetes]
 disabled = false
 format = '[$symbol$context:$namespace]($style) '
 style = '67'
+symbol = '󱃾 '
 
 [line_break]
 disabled = true
@@ -77,9 +79,9 @@ disabled = true
 
 [python]
 disabled = false
-symbol = 'py'
+symbol = ''
 version_format = ' v${raw}'
-style = '33 bold'
+style = '122'
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [terraform]
