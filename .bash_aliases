@@ -69,8 +69,6 @@ alias gst="git status"
 
 alias hg="history | grep"
 
-alias ip="curl -s icanhazip.com | pbcopy"
-
 alias compdef k="kubectl"
 
 alias kctx="kubectx"
@@ -93,6 +91,7 @@ alias compdef kgdy="kubectl get deployment -o yaml"
 alias compdef kgi="kubectl get ingress"
 alias compdef kgiy="kubectl get ingress -o yaml"
 alias compdef kgn="kubectl get node"
+alias compdef kgnc="kubectl get nodeclaim"
 alias compdef kgp="kubectl get pod"
 alias compdef kgplc="kubectl get pod -o jsonpath='{.spec.containers[*].name}'"
 alias compdef kgpw="kubectl get pod -w"

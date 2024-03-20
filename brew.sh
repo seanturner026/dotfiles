@@ -29,6 +29,7 @@ brew install argocd \
     gh \
     git-lfs \
     go \
+    gnu-sed \
     graphviz \
     hadolint \
     hdf5 \
