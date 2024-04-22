@@ -1,5 +1,5 @@
-go get -u github.com/cosmtrek/air
-go get github.com/joho/godotenv/cmd/dotenv
+go install github.com/cosmtrek/air@latest
+go install github.com/joho/godotenv/cmd/godotenv@latest
 go install -v github.com/fatih/gomodifytags@v1.16.0
 go install github.com/awslabs/eks-node-viewer/cmd/eks-node-viewer@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.54.1

@@ -164,3 +164,4 @@ alias tmuxr="tmux source-file ~/.tmux.conf"
 alias ytop="ytop -c solarized-dark"
 
 alias zg="cat ~/.bash_aliases | grep"
+

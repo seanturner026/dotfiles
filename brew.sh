@@ -1,7 +1,8 @@
+brew tap homebrew/cask-fonts
 brew tap TylerBrock/saw
 
 brew install --cask 1password/tap/1password-cli
-brew install --cask aws-vault
+brew install --cask font-jetbrains-mono-nerd-font
 brew install --cask libreoffice
 brew install --cask postman
 brew install --cask rectangle
@@ -10,7 +11,7 @@ brew tap homebrew/cask-fonts
 brew install argocd \
     argoproj/tap/kubectl-argo-rollouts \
     autojump \
-    aws/tap/aws-sam-cli \
+    aws-sam-cli \
     awscli \
     c-blosc \
     cilium-cli \
@@ -22,7 +23,6 @@ brew install argocd \
     dive \
     ffmpeg \
     flyctl \
-    fsouza/prettierd/prettierd \
     fzf \
     gcc \
     gdal \
@@ -55,7 +55,6 @@ brew install argocd \
     pyenv-virtualenv \
     rbenv \
     ripgrep \
-    rust \
     saw \
     tailwindcss \
     telnet \
@@ -66,7 +65,6 @@ brew install argocd \
     tfsec \
     tmux \
     tree \
-    vault \
     watch \
     wget \
     wireshark \
