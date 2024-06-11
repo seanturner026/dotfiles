@@ -1,8 +1,8 @@
 # plugins=(git)
 
-# export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
 export GOPATH="/Users/sean/go"
-# export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
+export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
 export PIP_REQUIRE_VIRTUALENV=true
 export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -27,6 +27,8 @@ then
   compinit
 fi
 
+source $ZSH/oh-my-zsh.sh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ -f ~/.bash_aliases ]; then
@@ -36,10 +38,10 @@ fi
 source ~/.zshenv
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-source "$HOME/.rye/env"
+eval "$(pyenv init -)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/vault vault
-# source <(kubectl completion zsh)
+source <(kubectl completion zsh)

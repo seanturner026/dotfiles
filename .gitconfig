@@ -1,19 +1,22 @@
 [user]
-	name = Sean Turner
-	email = sean.turner026@gmail.com
+    name = Sean Turner
+    email = sean.turner026@gmail.com
 
 [includeIf "gitdir:~/code/kobold-metals/"]
-	path = ~/code/kobold-metals/.gitconfig_include
+    path = ~/code/kobold-metals/.gitconfig_include
 
 [color]
-	ui = true
+    ui = true
 
 [fetch]
-	prune = true
+    prune = true
 
 [pull]
-	rebase = true
-	autoStash = true
+    rebase = true
+    autoStash = true
+
+# [diff]
+#     external = difft
 
 # [core]
 #     pager = delta
@@ -48,20 +51,14 @@
 # [interactive]
 #     diffFilter = delta --color-only
 [help]
-	autoCorrect = immediate
-
+    autoCorrect = immediate
 [merge]
-	conflictstyle = diff3
-
+    conflictstyle = diff3
 [alias]
 	pushb = !git push origin \"$(git rev-parse --abbrev-ref HEAD)\"
 	pullb = !git pull origin \"$(git rev-parse --abbrev-ref HEAD)\"
-
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-
-[diff]
-	external = difft
