@@ -390,6 +390,7 @@
     "imagepullsecret",
     "Infof",
     "initdb",
+    "iogas",
     "ipynb",
     "ipython",
     "ipywidgets",
@@ -541,6 +542,7 @@
     "tailwindcss",
     "templating",
     "terrashed",
+    "terraspec",
     "terratest",
     "tfenv",
     "tflint",
@@ -609,8 +611,8 @@
       "source.organizeImports": "explicit"
     }
   },
-  "breadcrumbs.enabled": false,
-  "editor.multiCursorLimit": 20000
+  "editor.multiCursorLimit": 20000,
+  "breadcrumbs.enabled": false
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.variableTypes": true
   // "go.inlayHints.functionTypeParameters": true,

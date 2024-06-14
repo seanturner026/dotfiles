@@ -16,6 +16,7 @@ export PATH="/Users/sean/.cargo/bin:$PATH"
 export PATH="/Users/sean/.local/bin:$PATH"
 export PATH="/Users/sean/go/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
