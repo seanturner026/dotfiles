@@ -56,6 +56,7 @@ brew install argocd \
     rbenv \
     ripgrep \
     saw \
+    stow \
     tailwindcss \
     telnet \
     terraform-docs \
