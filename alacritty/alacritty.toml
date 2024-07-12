@@ -1,4 +1,7 @@
 # https://archive.ph/r7Jrp#selection-972.0-972.42
+[font]
+size = 15.0
+
 [font.bold]
 family = "JetBrainsMonoNL NFM"
 style = "Bold"
