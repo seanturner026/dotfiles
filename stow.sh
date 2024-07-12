@@ -3,6 +3,7 @@
 stow -v -R -t ~/ bash
 stow -v -R -t ~/ git
 stow -v -R -t ~/ vim
+stow -v -R -t ~/ wezterm
 stow -v -R -t ~/ zsh
 stow -v -R -t ~/ zsh
 stow -v -R -t ~/.config starship
