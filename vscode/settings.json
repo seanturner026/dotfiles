@@ -109,7 +109,7 @@
   "autoDocstring.docstringFormat": "sphinx-notypes",
   "autoDocstring.startOnNewLine": true,
   "black-formatter.args": ["--config", "pyproject.toml", "--preview"],
-  "black-formatter.importStrategy": "fromEnvironment",
+  "black-formatter.importStrategy": "useBundled", //"fromEnvironment",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
@@ -467,6 +467,7 @@
     "PGDATA",
     "PGHOST",
     "PGPASSWORD",
+    "PGSSLMODE",
     "pidfile",
     "PIDS",
     "pkgconfig",
