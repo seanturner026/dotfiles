@@ -28,7 +28,7 @@ then
   compinit
 fi
 
-source "$HOME/.rye/env"
+source $HOME/.atuin/bin/env
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -47,3 +47,7 @@ eval "$(zoxide init --cmd cd zsh)"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/vault vault
 source <(kubectl completion zsh)
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
