@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/tmux
+
 stow -v -R -t ~/ bash
 stow -v -R -t ~/ git
 stow -v -R -t ~/ vim
