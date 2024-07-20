@@ -64,3 +64,5 @@
 	required = true
 [oh-my-zsh]
 	hide-dirty = 1
+[core]
+	editor = nvim
