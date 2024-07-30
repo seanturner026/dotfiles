@@ -1,5 +1,5 @@
 # ea - alias for editing aliases
-alias ea='vim ~/.bash_aliases; source ~/.bash_aliases && source $HOME/.bash_aliases && echo "aliases sourced  --ok."'
+alias ea='nvim ~/.bash_aliases; source ~/.bash_aliases && source $HOME/.bash_aliases && echo "aliases sourced  --ok."'
 
 alias  ..="cd .."
 alias  ...="cd ../.."
@@ -12,6 +12,7 @@ alias  .........="cd ../../../../../../../.."
 
 alias bat="bat --theme=TwoDark"
 
+alias c="clear"
 alias cgpap="code . && git pull --all --prune"
 
 alias dg="d | grep"

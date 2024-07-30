@@ -30,6 +30,7 @@
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
   "editor.renderWhitespace": "all",
+  "editor.semanticHighlighting.enabled": false,
   "editor.snippetSuggestions": "top",
   "editor.suggestOnTriggerCharacters": false,
   "editor.tabCompletion": "on",
