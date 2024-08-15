@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 local action = wezterm.action
 
 return {
+  audible_bell = "Disabled",
   color_scheme = "Tokyo Night Moon",
   enable_tab_bar = false,
   font_size = 16.0,
