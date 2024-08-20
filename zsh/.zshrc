@@ -10,6 +10,7 @@ export PYTHONBREAKPOINT=ipdb.set_trace
 export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 export PATH="$PYENV_ROOT:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/Users/sean/.cargo/bin:$PATH"

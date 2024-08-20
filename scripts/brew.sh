@@ -3,6 +3,7 @@ brew tap TylerBrock/saw
 
 brew install --cask 1password/tap/1password-cli
 brew install --cask font-jetbrains-mono-nerd-font
+brew install --cask font-roboto-mono-nerd-font
 brew install --cask libreoffice
 brew install --cask postman
 brew install --cask rectangle
