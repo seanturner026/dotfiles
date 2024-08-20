@@ -6,8 +6,7 @@ return {
   color_scheme = "Tokyo Night Moon",
   enable_tab_bar = false,
   font_size = 16.0,
-  font = wezterm.font("RobotoMono Nerd Font Mono"),
-  -- font = wezterm.font("JetBrains Mono"),
+  font = wezterm.font("SF Mono"), -- https://developer.apple.com/fonts/
   macos_window_background_blur = 30,
   window_background_opacity = 1.0,
   window_decorations = "RESIZE",
