@@ -244,6 +244,7 @@
   "cSpell.userWords": [
     "admissionregistration",
     "AIRTABLE",
+    "aiter",
     "alertmanager",
     "ALTMETRIC",
     "AMSTEL",
@@ -359,6 +360,7 @@
     "fstest",
     "fulladmin",
     "fullname",
+    "gbac",
     "GEMFURY",
     "geoapi",
     "geosoft",
@@ -385,6 +387,7 @@
     "htmlcov",
     "htmx",
     "httpclient",
+    "httpx",
     "hujson",
     "hujsonfmt",
     "hyperparameters",
@@ -471,6 +474,7 @@
     "PGSSLMODE",
     "pidfile",
     "PIDS",
+    "pkcs",
     "pkgconfig",
     "pkgs",
     "plotly",
@@ -528,6 +532,7 @@
     "Sprintf",
     "sqlalchemy",
     "sqlx",
+    "starlette",
     "startswith",
     "statefile",
     "statefulsets",
@@ -614,7 +619,8 @@
     }
   },
   "editor.multiCursorLimit": 20000,
-  "breadcrumbs.enabled": false
+  "breadcrumbs.enabled": false,
+  "git.ignoreMissingGitWarning": true
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.variableTypes": true
   // "go.inlayHints.functionTypeParameters": true,
