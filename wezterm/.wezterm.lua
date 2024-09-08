@@ -8,7 +8,6 @@ config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 10000 }
 config.color_scheme = "Tokyo Night Moon"
 
 config.audible_bell = "Disabled"
-config.enable_tab_bar = true
 
 config.font_size = 16.0
 config.font = wezterm.font("RobotoMono Nerd Font")
@@ -16,12 +15,17 @@ config.font = wezterm.font("RobotoMono Nerd Font")
 config.macos_window_background_blur = 30
 config.window_background_opacity = 1.0
 config.window_decorations = "RESIZE"
+
 config.window_padding = {
-  left = 10,
-  top = 10,
-  right = 10,
-  bottom = 10,
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
 }
+
+config.enable_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
 
 config.keys = {
   {
