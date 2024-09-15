@@ -71,7 +71,7 @@ alias gst="git status"
 
 alias hg="history | grep"
 
-alias compdef k="kubectl"
+alias compdef k="kubecolor"
 
 alias kctx="kubectx"
 
