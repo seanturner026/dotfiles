@@ -147,6 +147,15 @@ config.keys = {
   },
 }
 
+-- LEADER + number to activate that tab
+for i = 1, 9 do
+  table.insert(config.keys, {
+    mods = "LEADER",
+    key = tostring(i),
+    action = wezterm.action.ActivateTab(i - 1),
+  })
+end
+
 config.mouse_bindings = {
   {
     event = { Up = { streak = 1, button = "Left" } },
