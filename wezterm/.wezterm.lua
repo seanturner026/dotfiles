@@ -166,7 +166,7 @@ local separators = {
 tabline.setup({
   options = {
     icons_enabled = true,
-    theme = "Catppuccin Mocha",
+    theme = "Tokyo Night Moon",
     color_overrides = {},
     section_separators = separators,
     component_separators = separators,
@@ -178,12 +178,38 @@ tabline.setup({
     tabline_c = { " " },
     tab_active = {
       "tab_index",
-      { "parent", padding = 0 },
-      "/",
-      { "cwd", max_length = 30, padding = { left = 0, right = 1 } },
-      { "zoomed", padding = 0 },
+      -- {
+      --   "process",
+      --   icons_only = true,
+      --   padding = {
+      --     left = 0,
+      --     right = 1,
+      --   },
+      -- },
+      { "cwd", max_length = 50, padding = { left = 0, right = 1 } },
     },
-    tab_inactive = { "tab_index", { "process", padding = { left = 0, right = 1 } } },
+    tab_inactive = {
+      {
+        "tab_index",
+        padding = {
+          left = 0,
+          right = 1,
+        },
+      },
+      -- {
+      --   "process",
+      --   icons_only = true,
+      --   padding = 0,
+      -- },
+      {
+        "cwd",
+        max_length = 50,
+        padding = {
+          left = 0,
+          right = 1,
+        },
+      },
+    },
     tabline_x = {},
     tabline_y = {},
     tabline_z = {},
