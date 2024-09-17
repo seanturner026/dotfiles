@@ -24,7 +24,7 @@ config.keys = {
   {
     key = "f",
     mods = "CTRL",
-    action = wezterm.action.ToggleFullScreen,
+    action = action.ToggleFullScreen,
   },
   -- Navigate words like iterm
   {
@@ -71,72 +71,72 @@ config.keys = {
   {
     mods = "LEADER",
     key = "c",
-    action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+    action = action.SpawnTab("CurrentPaneDomain"),
   },
   {
     mods = "LEADER",
     key = "x",
-    action = wezterm.action.CloseCurrentPane({ confirm = true }),
+    action = action.CloseCurrentPane({ confirm = true }),
   },
   {
     mods = "LEADER",
     key = "b",
-    action = wezterm.action.ActivateTabRelative(-1),
+    action = action.ActivateTabRelative(-1),
   },
   {
     mods = "LEADER",
     key = "n",
-    action = wezterm.action.ActivateTabRelative(1),
+    action = action.ActivateTabRelative(1),
   },
   {
     mods = "LEADER",
     key = "v",
-    action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+    action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
   },
   {
     mods = "LEADER",
     key = "s",
-    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+    action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
   },
   {
     mods = "LEADER",
     key = "h",
-    action = wezterm.action.ActivatePaneDirection("Left"),
+    action = action.ActivatePaneDirection("Left"),
   },
   {
     mods = "LEADER",
     key = "j",
-    action = wezterm.action.ActivatePaneDirection("Down"),
+    action = action.ActivatePaneDirection("Down"),
   },
   {
     mods = "LEADER",
     key = "k",
-    action = wezterm.action.ActivatePaneDirection("Up"),
+    action = action.ActivatePaneDirection("Up"),
   },
   {
     mods = "LEADER",
     key = "l",
-    action = wezterm.action.ActivatePaneDirection("Right"),
+    action = action.ActivatePaneDirection("Right"),
   },
   {
     mods = "LEADER",
     key = "LeftArrow",
-    action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+    action = action.AdjustPaneSize({ "Left", 5 }),
   },
   {
     mods = "LEADER",
     key = "RightArrow",
-    action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
+    action = action.AdjustPaneSize({ "Right", 5 }),
   },
   {
     mods = "LEADER",
     key = "DownArrow",
-    action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
+    action = action.AdjustPaneSize({ "Down", 5 }),
   },
   {
     mods = "LEADER",
     key = "UpArrow",
-    action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+    action = action.AdjustPaneSize({ "Up", 5 }),
   },
 }
 
@@ -145,7 +145,7 @@ for i = 1, 9 do
   table.insert(config.keys, {
     mods = "LEADER",
     key = tostring(i),
-    action = wezterm.action.ActivateTab(i - 1),
+    action = action.ActivateTab(i - 1),
   })
 end
 
@@ -153,7 +153,7 @@ config.mouse_bindings = {
   {
     event = { Up = { streak = 1, button = "Left" } },
     mods = "CTRL",
-    action = wezterm.action.OpenLinkAtMouseCursor,
+    action = action.OpenLinkAtMouseCursor,
   },
 }
 
@@ -162,6 +162,7 @@ local separators = {
   left = wezterm.nerdfonts.ple_right_half_circle_thick,
   right = wezterm.nerdfonts.ple_left_half_circle_thick,
 }
+local current_working_directory = { "cwd", max_length = 50, padding = { left = 0, right = 1 } }
 
 tabline.setup({
   options = {
@@ -186,7 +187,7 @@ tabline.setup({
       --     right = 1,
       --   },
       -- },
-      { "cwd", max_length = 50, padding = { left = 0, right = 1 } },
+      current_working_directory,
     },
     tab_inactive = {
       {
@@ -201,14 +202,7 @@ tabline.setup({
       --   icons_only = true,
       --   padding = 0,
       -- },
-      {
-        "cwd",
-        max_length = 50,
-        padding = {
-          left = 0,
-          right = 1,
-        },
-      },
+      current_working_directory,
     },
     tabline_x = {},
     tabline_y = {},
