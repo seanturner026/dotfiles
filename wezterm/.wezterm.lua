@@ -164,4 +164,39 @@ config.mouse_bindings = {
   },
 }
 
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+local separators = {
+  left = wezterm.nerdfonts.ple_right_half_circle_thick,
+  right = wezterm.nerdfonts.ple_left_half_circle_thick,
+}
+
+tabline.setup({
+  options = {
+    icons_enabled = true,
+    theme = "Catppuccin Mocha",
+    color_overrides = {},
+    section_separators = separators,
+    component_separators = separators,
+    tab_separators = separators,
+  },
+  sections = {
+    tabline_a = { "mode" },
+    tabline_b = {},
+    tabline_c = { " " },
+    tab_active = {
+      "tab_index",
+      { "parent", padding = 0 },
+      "/",
+      { "cwd", max_length = 30, padding = { left = 0, right = 1 } },
+      { "zoomed", padding = 0 },
+    },
+    tab_inactive = { "tab_index", { "process", padding = { left = 0, right = 1 } } },
+    tabline_x = {},
+    tabline_y = {},
+    tabline_z = {},
+  },
+  extensions = {},
+})
+tabline.apply_to_config(config)
+
 return config
