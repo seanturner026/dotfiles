@@ -14,7 +14,7 @@
     "feyoung.comment-aligner-space",
     "ms-python.python",
     "ms-python.black-formatter",
-    "ms-python.flake8",
+    // "ms-python.flake8",
     "ms-python.mypy-type-checker",
     // "ms-python.vscode-pylance",
     "rafamel.subtle-brackets",
@@ -24,7 +24,7 @@
   "editor.cursorBlinking": "phase",
   "editor.definitionLinkOpensInPeek": true,
   "editor.occurrencesHighlight": "off",
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": false,
   "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 200,
   "editor.minimap.renderCharacters": false,
@@ -619,7 +619,6 @@
     }
   },
   "editor.multiCursorLimit": 20000,
-  "breadcrumbs.enabled": false,
   "git.ignoreMissingGitWarning": true
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.variableTypes": true
