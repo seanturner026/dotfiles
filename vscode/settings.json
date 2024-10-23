@@ -462,6 +462,7 @@
     "omegaconf",
     "ondemand",
     "openblas",
+    "opencost",
     "Opensearch",
     "otel",
     "Pagerduty",
