@@ -42,6 +42,8 @@ alias gcm="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcof="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
+alias gcp="git cherry-pick"
+alias gcpa="git cherry-pick --abort"
 
 alias gd="git diff"
 
@@ -146,7 +148,7 @@ alias tf="terraform"
 alias tfa="terraform apply"
 alias tfc="terraform console"
 alias tfi="terraform init"
-alias tfiam="nvim -c 'startinsert' temp && cat temp | iam-policy-json-to-terraform | pbcopy && rm temp"
+alias tfiam='pbpaste | iam-policy-json-to-terraform | pbcopy && echo "Done"'
 alias tfims="terraform init -migrate-state"
 alias tfiu="terraform init -upgrade"
 alias tfo="terraform output"
