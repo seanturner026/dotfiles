@@ -7,6 +7,5 @@ go install github.com/google/ko@latest
 go install github.com/joho/godotenv/cmd/godotenv@latest
 go install github.com/kubecolor/kubecolor@latest # https://github.com/kubecolor/kubecolor
 go install github.com/segmentio/golines@latest
-go install github.com/stefanprodan/timoni@latest # https://github.com/stefanprodan/timoni
 go install github.com/tailscale/hujson/cmd/hujsonfmt@latest
 go install sigs.k8s.io/krew/cmd/krew@latest

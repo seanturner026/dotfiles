@@ -9,6 +9,7 @@ brew install --cask postman
 brew install --cask rectangle
 brew install --cask stats
 brew tap homebrew/cask-fonts
+brew install stefanprodan/tap/timoni
 brew install argocd \
     argoproj/tap/kubectl-argo-rollouts \
     autojump \
