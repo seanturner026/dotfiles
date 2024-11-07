@@ -6,8 +6,8 @@ local config = {}
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 10000 }
 
 config.color_scheme = "Tokyo Night Moon"
-
 config.audible_bell = "Disabled"
+config.max_fps = 120
 
 config.font_size = 16.0
 config.font = wezterm.font("RobotoMono Nerd Font")
