@@ -20,123 +20,48 @@ config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 
+config.scrollback_lines = 3000
+
+-- Dim inactive panes
+config.inactive_pane_hsb = {
+  saturation = 0.5,
+  brightness = 0.5,
+}
+
 config.keys = {
-  {
-    key = "f",
-    mods = "CTRL",
-    action = action.ToggleFullScreen,
-  },
+  { key = "f", mods = "CTRL", action = action.ToggleFullScreen },
+
   -- Navigate words like iterm
-  {
-    mods = "OPT",
-    key = "LeftArrow",
-    action = action.SendKey({
-      mods = "ALT",
-      key = "b",
-    }),
-  },
-  {
-    mods = "OPT",
-    key = "RightArrow",
-    action = action.SendKey({
-      mods = "ALT",
-      key = "f",
-    }),
-  },
-  {
-    mods = "CMD",
-    key = "LeftArrow",
-    action = action.SendKey({
-      mods = "CTRL",
-      key = "a",
-    }),
-  },
-  {
-    mods = "CMD",
-    key = "RightArrow",
-    action = action.SendKey({
-      mods = "CTRL",
-      key = "e",
-    }),
-  },
-  {
-    mods = "CMD",
-    key = "Backspace",
-    action = action.SendKey({
-      mods = "CTRL",
-      key = "u",
-    }),
-  },
+  { mods = "OPT", key = "LeftArrow", action = action.SendKey({ mods = "ALT", key = "b" }) },
+  { mods = "OPT", key = "RightArrow", action = action.SendKey({ mods = "ALT", key = "f" }) },
+  { mods = "CMD", key = "LeftArrow", action = action.SendKey({ mods = "CTRL", key = "a" }) },
+  { mods = "CMD", key = "RightArrow", action = action.SendKey({ mods = "CTRL", key = "e" }) },
+  { mods = "CMD", key = "Backspace", action = action.SendKey({ mods = "CTRL", key = "u" }) },
+
   -- tmux-like bindings
-  {
-    mods = "LEADER",
-    key = "c",
-    action = action.SpawnTab("CurrentPaneDomain"),
-  },
-  {
-    mods = "LEADER",
-    key = "x",
-    action = action.CloseCurrentPane({ confirm = true }),
-  },
-  {
-    mods = "LEADER",
-    key = "b",
-    action = action.ActivateTabRelative(-1),
-  },
-  {
-    mods = "LEADER",
-    key = "n",
-    action = action.ActivateTabRelative(1),
-  },
-  {
-    mods = "LEADER",
-    key = "v",
-    action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-  },
-  {
-    mods = "LEADER",
-    key = "s",
-    action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
-  },
-  {
-    mods = "LEADER",
-    key = "h",
-    action = action.ActivatePaneDirection("Left"),
-  },
-  {
-    mods = "LEADER",
-    key = "j",
-    action = action.ActivatePaneDirection("Down"),
-  },
-  {
-    mods = "LEADER",
-    key = "k",
-    action = action.ActivatePaneDirection("Up"),
-  },
-  {
-    mods = "LEADER",
-    key = "l",
-    action = action.ActivatePaneDirection("Right"),
-  },
-  {
-    mods = "LEADER",
-    key = "LeftArrow",
-    action = action.AdjustPaneSize({ "Left", 5 }),
-  },
-  {
-    mods = "LEADER",
-    key = "RightArrow",
-    action = action.AdjustPaneSize({ "Right", 5 }),
-  },
-  {
-    mods = "LEADER",
-    key = "DownArrow",
-    action = action.AdjustPaneSize({ "Down", 5 }),
-  },
-  {
-    mods = "LEADER",
-    key = "UpArrow",
-    action = action.AdjustPaneSize({ "Up", 5 }),
+  { mods = "LEADER", key = "c", action = action.SpawnTab("CurrentPaneDomain") },
+  { mods = "LEADER", key = "x", action = action.CloseCurrentPane({ confirm = true }) },
+  { mods = "LEADER", key = "b", action = action.ActivateTabRelative(-1) },
+  { mods = "LEADER", key = "n", action = action.ActivateTabRelative(1) },
+  { mods = "LEADER", key = "v", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { mods = "LEADER", key = "s", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { mods = "LEADER", key = "h", action = action.ActivatePaneDirection("Left") },
+  { mods = "LEADER", key = "j", action = action.ActivatePaneDirection("Down") },
+  { mods = "LEADER", key = "k", action = action.ActivatePaneDirection("Up") },
+  { mods = "LEADER", key = "l", action = action.ActivatePaneDirection("Right") },
+
+  -- Reside panes without hitting leader multiple times
+  { key = "r", mods = "LEADER", action = action.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
+}
+
+config.key_tables = {
+  resize_pane = {
+    { key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
+    { key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
+    { key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
+    { key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
+    { key = "Enter", action = "PopKeyTable" },
+    { key = "Escape", action = "PopKeyTable" },
   },
 }
 
@@ -179,14 +104,6 @@ tabline.setup({
     tabline_c = { " " },
     tab_active = {
       "tab_index",
-      -- {
-      --   "process",
-      --   icons_only = true,
-      --   padding = {
-      --     left = 0,
-      --     right = 1,
-      --   },
-      -- },
       current_working_directory,
     },
     tab_inactive = {
@@ -197,11 +114,6 @@ tabline.setup({
           right = 1,
         },
       },
-      -- {
-      --   "process",
-      --   icons_only = true,
-      --   padding = 0,
-      -- },
       current_working_directory,
     },
     tabline_x = {},
