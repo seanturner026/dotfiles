@@ -1,6 +1,7 @@
 # plugins=(git)
 
 export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
+export DISABLE_UPDATE_PROMPT=true
 export GOPATH="/Users/sean/go"
 export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
 export PIP_REQUIRE_VIRTUALENV=true
