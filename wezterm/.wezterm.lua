@@ -24,43 +24,43 @@ config.use_fancy_tab_bar = false
 config.scrollback_lines = 3000
 
 config.keys = {
-  { key = "f", mods = "CTRL", action = action.ToggleFullScreen },
+  { key = "f",       mods = "CTRL",      action = action.ToggleFullScreen },
 
   -- Navigate words like iterm
-  { mods = "OPT", key = "LeftArrow", action = action.SendKey({ mods = "ALT", key = "b" }) },
-  { mods = "OPT", key = "RightArrow", action = action.SendKey({ mods = "ALT", key = "f" }) },
-  { mods = "CMD", key = "LeftArrow", action = action.SendKey({ mods = "CTRL", key = "a" }) },
-  { mods = "CMD", key = "RightArrow", action = action.SendKey({ mods = "CTRL", key = "e" }) },
-  { mods = "CMD", key = "Backspace", action = action.SendKey({ mods = "CTRL", key = "u" }) },
+  { mods = "OPT",    key = "LeftArrow",  action = action.SendKey({ mods = "ALT", key = "b" }) },
+  { mods = "OPT",    key = "RightArrow", action = action.SendKey({ mods = "ALT", key = "f" }) },
+  { mods = "CMD",    key = "LeftArrow",  action = action.SendKey({ mods = "CTRL", key = "a" }) },
+  { mods = "CMD",    key = "RightArrow", action = action.SendKey({ mods = "CTRL", key = "e" }) },
+  { mods = "CMD",    key = "Backspace",  action = action.SendKey({ mods = "CTRL", key = "u" }) },
 
   -- tmux-like bindings
-  { mods = "LEADER", key = "c", action = action.SpawnTab("CurrentPaneDomain") },
-  { mods = "LEADER", key = "x", action = action.CloseCurrentPane({ confirm = true }) },
-  { mods = "LEADER", key = "b", action = action.ActivateTabRelative(-1) },
-  { mods = "LEADER", key = "n", action = action.ActivateTabRelative(1) },
-  { mods = "LEADER", key = "v", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-  { mods = "LEADER", key = "s", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-  { mods = "LEADER", key = "h", action = action.ActivatePaneDirection("Left") },
-  { mods = "LEADER", key = "j", action = action.ActivatePaneDirection("Down") },
-  { mods = "LEADER", key = "k", action = action.ActivatePaneDirection("Up") },
-  { mods = "LEADER", key = "l", action = action.ActivatePaneDirection("Right") },
+  { mods = "LEADER", key = "c",          action = action.SpawnTab("CurrentPaneDomain") },
+  { mods = "LEADER", key = "x",          action = action.CloseCurrentPane({ confirm = true }) },
+  { mods = "LEADER", key = "b",          action = action.ActivateTabRelative(-1) },
+  { mods = "LEADER", key = "n",          action = action.ActivateTabRelative(1) },
+  { mods = "LEADER", key = "v",          action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { mods = "LEADER", key = "s",          action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { mods = "LEADER", key = "h",          action = action.ActivatePaneDirection("Left") },
+  { mods = "LEADER", key = "j",          action = action.ActivatePaneDirection("Down") },
+  { mods = "LEADER", key = "k",          action = action.ActivatePaneDirection("Up") },
+  { mods = "LEADER", key = "l",          action = action.ActivatePaneDirection("Right") },
 
   -- Reside panes without hitting leader multiple times
-  { key = "r", mods = "LEADER", action = action.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
+  { key = "r",       mods = "LEADER",    action = action.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
 
   -- Workspace bindings (similar to tmux sessions)
-  { mods = "CMD", key = "[", action = action.SwitchWorkspaceRelative(1) },
-  { mods = "CMD", key = "]", action = action.SwitchWorkspaceRelative(1) },
-  { mods = "OPT", key = "v", action = action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+  { mods = "CMD",    key = "[",          action = action.SwitchWorkspaceRelative(1) },
+  { mods = "CMD",    key = "]",          action = action.SwitchWorkspaceRelative(1) },
+  { mods = "OPT",    key = "v",          action = action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 }
 
 config.key_tables = {
   resize_pane = {
-    { key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
-    { key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
-    { key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
-    { key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
-    { key = "Enter", action = "PopKeyTable" },
+    { key = "h",      action = action.AdjustPaneSize({ "Left", 5 }) },
+    { key = "j",      action = action.AdjustPaneSize({ "Down", 5 }) },
+    { key = "k",      action = action.AdjustPaneSize({ "Up", 5 }) },
+    { key = "l",      action = action.AdjustPaneSize({ "Right", 5 }) },
+    { key = "Enter",  action = "PopKeyTable" },
     { key = "Escape", action = "PopKeyTable" },
   },
 }
@@ -133,7 +133,7 @@ wezterm.on("format-tab-title", function(tab)
   return title
 end)
 
-wezterm.on("update-status", function(window, pane)
+wezterm.on("update-status", function(window)
   window:set_right_status(window:active_workspace() .. "  ")
 end)
 
