@@ -47,6 +47,11 @@ config.keys = {
 
   -- Reside panes without hitting leader multiple times
   { key = "r", mods = "LEADER", action = action.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
+
+  -- Workspace bindings (similar to tmux sessions)
+  { mods = "CMD", key = "[", action = action.SwitchWorkspaceRelative(1) },
+  { mods = "CMD", key = "]", action = action.SwitchWorkspaceRelative(1) },
+  { mods = "OPT", key = "v", action = action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 }
 
 config.key_tables = {
@@ -118,6 +123,19 @@ tabline.setup({
   extensions = {},
 })
 tabline.apply_to_config(config)
+
+wezterm.on("format-tab-title", function(tab)
+  local pane = tab.active_pane
+  local title = pane.title
+  if pane.domain_name then
+    title = title .. " - (" .. pane.domain_name .. ")"
+  end
+  return title
+end)
+
+wezterm.on("update-status", function(window, pane)
+  window:set_right_status(window:active_workspace() .. "  ")
+end)
 
 config.window_padding = {
   left = 2,
