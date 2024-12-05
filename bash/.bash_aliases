@@ -60,6 +60,7 @@ alias gpof="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xarg
 
 alias grai="git rebase --autosquash -i"
 alias gri="git rebase -i"
+alias grh="git reset --hard"
 alias grs="git restore --staged"
 
 alias gs="git show"
