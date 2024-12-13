@@ -3,6 +3,7 @@
 export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
 export DISABLE_UPDATE_PROMPT=true
 export GOPATH="/Users/sean/go"
+export KUBE_EDITOR=nvim
 export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
 export PIP_REQUIRE_VIRTUALENV=true
 export PYENV_ROOT="$HOME/.pyenv"
