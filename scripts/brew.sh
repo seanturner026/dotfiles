@@ -30,8 +30,8 @@ brew install argocd \
     gdal \
     gh \
     git-lfs \
-    go \
     gnu-sed \
+    go \
     graphviz \
     hadolint \
     hdf5 \
@@ -49,6 +49,7 @@ brew install argocd \
     mysql-client \
     neovim \
     netlify-cli \
+    nmap \
     php \
     pipx \
     postgresql \
