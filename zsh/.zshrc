@@ -7,7 +7,7 @@ export KUBE_EDITOR=nvim
 export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
 export PIP_REQUIRE_VIRTUALENV=true
 export PYENV_ROOT="$HOME/.pyenv"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 export PYTHONBREAKPOINT=ipdb.set_trace
 export ZSH="$HOME/.oh-my-zsh"
 

@@ -13,7 +13,6 @@ config.font_size = 16.0
 config.font = wezterm.font("RobotoMono Nerd Font")
 
 config.macos_window_background_blur = 30
-config.inactive_pane_hsb = { saturation = 0.75 } -- Dim inactive panes
 config.window_background_opacity = 1.0
 config.window_decorations = "RESIZE"
 
@@ -21,7 +20,7 @@ config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 
-config.scrollback_lines = 3000
+config.scrollback_lines = 6000
 
 config.keys = {
   { key = "f",       mods = "CTRL",      action = action.ToggleFullScreen },
