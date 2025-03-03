@@ -51,7 +51,9 @@ alias ggu="go get -u"
 alias gl="git log --format=format:'%C(auto)%h %C(green)%aN%Creset %s' --graph"
 
 alias gpap="git pull --all --prune"
+alias gpbl="git pullb" # This catches gplb typos
 alias gplb="git pullb"
+alias gpbh="git pushb" # This catches gphb typos
 alias gphb="git pushb"
 alias gpof="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git push -f origin"
 
