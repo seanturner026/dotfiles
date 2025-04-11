@@ -18,6 +18,10 @@ local function options(config)
   config.use_fancy_tab_bar = false
 
   config.scrollback_lines = 6000
+  config.quick_select_patterns = {
+    "[0-9a-f]{7,40}", -- Hash default
+    "[a-zA-Z0-9][a-zA-Z0-9-]+", -- More general pattern for Kubernetes resources
+  }
 
   config.mouse_bindings = {
     {
