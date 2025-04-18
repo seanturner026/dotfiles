@@ -5,6 +5,5 @@ local config = wezterm.config_builder()
 require("keys")(config)
 require("options")(config)
 require("tabline")(config)
-require("toggle_terminal")(config)
 
 return config
