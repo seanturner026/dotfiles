@@ -128,8 +128,6 @@
   },
 
   "sqltools.highlightQuery": false,
-  "terminal.integrated.cwd": "/Users/sean",
-
   "terraform.languageServer.enable": true,
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
@@ -613,7 +611,6 @@
   },
   "window.zoomLevel": 2,
   "workbench.editor.empty.hint": "hidden",
-  "workbench.activityBar.location": "hidden",
   "[go][go.mod][python]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
