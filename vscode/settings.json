@@ -617,7 +617,8 @@
     }
   },
   "editor.multiCursorLimit": 20000,
-  "git.ignoreMissingGitWarning": true
+  "git.ignoreMissingGitWarning": true,
+  "workbench.activityBar.location": "hidden"
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.variableTypes": true
   // "go.inlayHints.functionTypeParameters": true,
