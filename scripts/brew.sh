@@ -54,8 +54,6 @@ brew install argocd \
     pipx \
     postgresql \
     pre-commit \
-    pyenv \
-    pyenv-virtualenv \
     rbenv \
     ripgrep \
     saw \
