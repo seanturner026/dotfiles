@@ -1,1 +1,4 @@
-theme = tokyonight
+font-family ="RobotoMono Nerd Font"
+font-size = 15
+
+theme = tokyonight_moon
