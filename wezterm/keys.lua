@@ -22,10 +22,10 @@ local function keys(config)
     { mods = "LEADER", key = "n",          action = action.ActivateTabRelative(1) },
     { mods = "LEADER", key = "v",          action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     { mods = "LEADER", key = "s",          action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-    { mods = "LEADER", key = "h",          action = action.ActivatePaneDirection("Left") },
-    { mods = "LEADER", key = "j",          action = action.ActivatePaneDirection("Down") },
-    { mods = "LEADER", key = "k",          action = action.ActivatePaneDirection("Up") },
-    { mods = "LEADER", key = "l",          action = action.ActivatePaneDirection("Right") },
+    { mods = "OPT",    key = "h",          action = action.ActivatePaneDirection("Left") },
+    { mods = "OPT",    key = "j",          action = action.ActivatePaneDirection("Down") },
+    { mods = "OPT",    key = "k",          action = action.ActivatePaneDirection("Up") },
+    { mods = "OPT",    key = "l",          action = action.ActivatePaneDirection("Right") },
 
     -- Reside panes without hitting leader multiple times
     {
