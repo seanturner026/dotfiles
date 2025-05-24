@@ -58,7 +58,10 @@ local function keys(config)
           id = string.match(id, "(.+)%..+$")        -- remove file extention
           local opts = {
             relative = true,
+            resize_window = false,
             restore_text = true,
+            close_open_tabs = true,
+            window = pane:window(),
             on_pane_restore = resurrect.tab_state.default_on_pane_restore,
           }
           if type == "workspace" then
