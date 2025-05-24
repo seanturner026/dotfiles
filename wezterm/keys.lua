@@ -74,6 +74,20 @@ local function keys(config)
         end)
       end),
     },
+    {
+      key = "d",
+      mods = "ALT",
+      action = wezterm.action_callback(function(win, pane)
+        resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
+          resurrect.state_manager.delete_state(id)
+        end, {
+          title = "Delete State",
+          description = "Select State to Delete and press Enter = accept, Esc = cancel, / = filter",
+          fuzzy_description = "Search State to Delete: ",
+          is_fuzzy = true,
+        })
+      end),
+    },
   }
 
   config.key_tables = {
