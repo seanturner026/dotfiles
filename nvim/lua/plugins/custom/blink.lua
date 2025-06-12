@@ -33,7 +33,7 @@ return {
     },
     opts = {
         keymap = {
-            preset = "enter",
+            preset = "default",
         },
 
         appearance = {
