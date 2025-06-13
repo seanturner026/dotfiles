@@ -1,5 +1,6 @@
 return {
     "allaman/kustomize.nvim",
+    commit = "117da376f0400ce92f3b86889ea2b5604642914e", -- Pin to commit until --enable-helm usage is more clear
     requires = "nvim-lua/plenary.nvim",
     ft = "yaml",
     opts = { enable_key_mappings = false },
