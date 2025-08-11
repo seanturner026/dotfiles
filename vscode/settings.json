@@ -6,17 +6,15 @@
       "strings": false
     }
   },
-
   "dev.containers.defaultExtensions": [
     "dakara.transformer",
-    "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "feyoung.comment-aligner-space",
-    "ms-python.python",
     "ms-python.black-formatter",
-    // "ms-python.flake8",
-    "ms-python.mypy-type-checker",
-    // "ms-python.vscode-pylance",
+    "ms-python.flake8",
+    "ms-python.isort",
+    "ms-python.python",
+    "ms-toolsai.jupyter",
     "rafamel.subtle-brackets",
     "stkb.rewrap",
     "streetsidesoftware.code-spell-checker"
@@ -40,9 +38,7 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
-
   "extensions.ignoreRecommendations": true,
-
   "files.associations": {
     "Dockerfile.*": "dockerfile",
     "*.yaml.gotmpl": "helm",
@@ -52,7 +48,9 @@
   },
   "json.schemas": [
     {
-      "fileMatch": ["*.hujson"],
+      "fileMatch": [
+        "*.hujson"
+      ],
       "schema": {
         "allowTrailingCommas": true
       }
@@ -60,7 +58,6 @@
   ],
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-
   "go.formatTool": "goimports",
   "go.useLanguageServer": true,
   "[go]": {
@@ -78,7 +75,9 @@
     }
   },
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": ["--fast"],
+  "go.lintFlags": [
+    "--fast"
+  ],
   "gopls": {
     // Add parameter placeholders when completing a function.
     "usePlaceholders": true,
@@ -90,14 +89,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-
-  // "multiCommand.commands": [
-  //   {
-  //     "command": "multiCommand.saveFileAndSortImportsWhenPython",
-  //     "sequence": ["python.sortImports", "workbench.action.files.save"]
-  //   }
-  // ],
-
   "[python]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "ms-python.black-formatter",
@@ -109,24 +100,32 @@
   "mypy-type-checker.importStrategy": "fromEnvironment",
   "autoDocstring.docstringFormat": "sphinx-notypes",
   "autoDocstring.startOnNewLine": true,
-  "black-formatter.args": ["--config", "pyproject.toml", "--preview"],
+  "black-formatter.args": [
+    "--config",
+    "pyproject.toml",
+    "--preview"
+  ],
   "black-formatter.importStrategy": "useBundled", //"fromEnvironment",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
-  "flake8.args": ["--config=setup.cfg"],
+  "flake8.args": [
+    "--config=setup.cfg"
+  ],
   "flake8.importStrategy": "fromEnvironment",
   // "python.analysis.typeCheckingMode": "strict", // "basic"
-  "python.formatting.blackArgs": ["--config", "pyproject.toml", "--preview"],
+  "python.formatting.blackArgs": [
+    "--config",
+    "pyproject.toml",
+    "--preview"
+  ],
   "python.languageServer": "Pylance",
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   // "python.formatting.blackPath": "/Users/sean/.local/bin/black",
-
   "[ruby]": {
     "editor.formatOnSave": true
   },
-
   "sqltools.highlightQuery": false,
   "terraform.languageServer.enable": true,
   "[terraform]": {
@@ -164,9 +163,7 @@
   "workbench.iconTheme": "eq-material-theme-icons",
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 16,
-
   "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
-
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     // "editor.formatOnSave": true,
@@ -585,7 +582,10 @@
     "zarr",
     "zccm"
   ],
-  "cSpell.enableFiletypes": ["!json", "!vue"],
+  "cSpell.enableFiletypes": [
+    "!json",
+    "!vue"
+  ],
   "editor.bracketPairColorization.enabled": false,
   "workbench.sideBar.location": "right",
   // "go.inlayHints.assignVariableTypes": true,
@@ -595,7 +595,9 @@
   "go.inlayHints.parameterNames": true,
   "rewrap.autoWrap.enabled": true,
   "rewrap.wrappingColumn": 120,
-  "cSpell.ignoreWords": ["kobold"],
+  "cSpell.ignoreWords": [
+    "kobold"
+  ],
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "jupyter.logging.level": "verbose",

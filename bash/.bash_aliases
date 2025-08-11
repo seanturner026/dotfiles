@@ -1,14 +1,14 @@
 # ea - alias for editing aliases
 alias ea='nvim ~/.bash_aliases; source ~/.bash_aliases && source $HOME/.bash_aliases && echo "aliases sourced  --ok."'
 
-alias  ..="cd .."
-alias  ...="cd ../.."
-alias  ....="cd ../../.."
-alias  .....="cd ../../../.."
-alias  ......="cd ../../../../.."
-alias  .......="cd ../../../../../.."
-alias  ........="cd ../../../../../../.."
-alias  .........="cd ../../../../../../../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+alias ........="cd ../../../../../../.."
+alias .........="cd ../../../../../../../.."
 
 alias bat="bat --theme=TwoDark"
 
@@ -85,6 +85,7 @@ alias compdef kds="kubecolor describe service"
 alias compdef kdsa="kubecolor describe serviceaccount"
 alias compdef kdsec="kubecolor describe secret"
 
+alias ke="kubectl explain"
 alias compdef keit="kubecolor exec -it"
 
 alias compdef kgcm="kubecolor get configmap"
@@ -97,7 +98,7 @@ alias compdef kgn="kubecolor get node"
 alias compdef kgnc="kubecolor get nodeclaim"
 alias compdef kgp="kubecolor get pod"
 alias compdef kgplc="kubecolor get pod -o jsonpath='{.spec.containers[*].name}'"
-alias compdef kgpw="kubecolor get pod -o wide"
+alias compdef kgpw="kubecolor klock pod"
 alias compdef kgpy="kubecolor get pod -o yaml"
 alias compdef kgr="kubecolor get rollouts"
 alias compdef kgs="kubecolor get service"
