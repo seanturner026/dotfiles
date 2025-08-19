@@ -32,6 +32,7 @@ vim.opt.listchars = {
     trail = "·",
 }
 
+vim.opt.cmdheight = 0
 vim.opt.inccommand = "split"
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
