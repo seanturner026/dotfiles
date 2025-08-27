@@ -52,7 +52,7 @@ local function keys(config)
   -- LEADER + number to activate that tab
   for i = 1, 9 do
     table.insert(config.keys, {
-      mods = "LEADER",
+      mods = "OPT",
       key = tostring(i),
       action = action.ActivateTab(i - 1),
     })
