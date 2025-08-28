@@ -22,10 +22,6 @@ vim.keymap.set({ "n" }, "<leader>re", ":%s/<C-r><C-w>/<C-r><C-w>/gc<Left><Left><
 vim.keymap.set("n", "k", "v:count == 0 ? 'gkzz' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gjzz' : 'j'", { expr = true, silent = true })
 
--- Diagnostic keymaps
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-
 -- Remap for smooth vertical jumps
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Center cursor after moving up a half-page" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Center cursor after moving down a half-page" })
