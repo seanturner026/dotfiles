@@ -105,7 +105,7 @@ vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { de
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         if vim.fn.argv(0) == "" then
-            require("fff").find_files()
+            require("telescope.builtin").find_files()
         end
     end,
 })
