@@ -16,6 +16,7 @@ brew install argocd \
     aws-sam-cli \
     awscli \
     c-blosc \
+    carapace \
     cilium-cli \
     circleci \
     coreutils \
