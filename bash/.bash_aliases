@@ -98,6 +98,7 @@ alias compdef kgiy="echo kubectl get ingress -o yaml && kubecolor get ingress -o
 alias compdef kgn="echo kubectl get node && kubecolor get node"
 alias compdef kgnc="echo kubectl get nodeclaim && kubecolor get nodeclaim"
 alias compdef kgp="echo kubectl get pod && kubecolor get pod"
+alias compdef kgpg="echo 'kubectl get pod | grep' && kubecolor get pod | grep"
 alias compdef kgplc="echo kubectl get pod -o jsonpath='{.spec.containers[*].name}' && kubecolor get pod -o jsonpath='{.spec.containers[*].name}'"
 alias compdef kgpw="echo kubectl klock pod && kubecolor klock pod"
 alias compdef kgpy="echo kubectl get pod -o yaml && kubecolor get pod -o yaml"
