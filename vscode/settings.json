@@ -22,7 +22,7 @@
   "editor.cursorBlinking": "phase",
   "editor.definitionLinkOpensInPeek": true,
   "editor.occurrencesHighlight": "off",
-  "editor.matchBrackets": false,
+  "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 200,
   "editor.minimap.renderCharacters": false,
