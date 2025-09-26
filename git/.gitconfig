@@ -1,12 +1,12 @@
 [user]
-    name = Sean Turner
-    email = sean.turner026@gmail.com
+	name = Sean Turner
+	email = sean.turner026@gmail.com
 
 [includeIf "gitdir:~/code/kobold-metals/"]
-    path = ~/code/kobold-metals/.gitconfig_include
+	path = ~/code/kobold-metals/.gitconfig_include
 
 [color]
-    ui = true
+	ui = true
 
 [fetch]
 	prune = true
@@ -14,14 +14,18 @@
 	all = true
 
 [pull]
-    rebase = true
-    autoStash = true
+	rebase = true
+	autoStash = true
 
 [help]
-    autoCorrect = immediate
+	autoCorrect = immediate
 
 [merge]
-    conflictstyle = zdiff3
+	conflictstyle = zdiff3
+	tool = nvim -d
+
+[mergetool]
+	keepBackup = false
 
 [core]
 	editor = nvim
