@@ -97,6 +97,7 @@ alias compdef kgi="echo kubectl get ingress && kubecolor get ingress"
 alias compdef kgiy="echo kubectl get ingress -o yaml && kubecolor get ingress -o yaml"
 alias compdef kgn="echo kubectl get node && kubecolor get node"
 alias compdef kgnc="echo kubectl get nodeclaim && kubecolor get nodeclaim"
+alias compdef kgncg="echo 'kubectl get nodeclaim | grep' && kubecolor get nodeclaim | grep"
 alias compdef kgp="echo kubectl get pod && kubecolor get pod"
 alias compdef kgpg="echo 'kubectl get pod | grep' && kubecolor get pod | grep"
 alias compdef kgplc="echo kubectl get pod -o jsonpath='{.spec.containers[*].name}' && kubecolor get pod -o jsonpath='{.spec.containers[*].name}'"
@@ -165,6 +166,8 @@ alias tfwn="echo terraform workspace new && terraform workspace new"
 alias tfws="echo terraform workspace select && terraform workspace select"
 
 alias tmuxr="tmux source-file ~/.tmux.conf"
+
+alias vimdiff='nvim -d'
 
 alias ytop="ytop -c solarized-dark"
 
