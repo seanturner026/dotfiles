@@ -7,12 +7,11 @@
     }
   },
   "dev.containers.defaultExtensions": [
+    "charliermarsh.ruff",
     "dakara.transformer",
     "esbenp.prettier-vscode",
     "feyoung.comment-aligner-space",
-    "ms-python.black-formatter",
     "ms-python.flake8",
-    "ms-python.isort",
     "ms-python.python",
     "ms-toolsai.jupyter",
     "rafamel.subtle-brackets",
@@ -22,7 +21,7 @@
   "editor.cursorBlinking": "phase",
   "editor.definitionLinkOpensInPeek": true,
   "editor.occurrencesHighlight": "off",
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": false,
   "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 200,
   "editor.minimap.renderCharacters": false,
@@ -91,7 +90,7 @@
   },
   "[python]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     },
