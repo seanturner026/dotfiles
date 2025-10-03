@@ -104,6 +104,9 @@ vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { de
 -- Open Telescope on start
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
+        if vim.bo.filetype == "man" then
+            return
+        end
         if vim.fn.argv(0) == "" then
             require("telescope.builtin").find_files()
         end

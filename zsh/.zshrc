@@ -5,6 +5,7 @@ export DISABLE_UPDATE_PROMPT=true
 export GOPATH="/Users/sean/go"
 export KUBE_EDITOR=nvim
 export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
+export MANPAGER='nvim +Man!'
 export PIP_REQUIRE_VIRTUALENV=true
 export PYTHONBREAKPOINT=ipdb.set_trace
 export ZSH="$HOME/.oh-my-zsh"
