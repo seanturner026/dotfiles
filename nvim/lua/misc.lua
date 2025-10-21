@@ -211,6 +211,7 @@ end, 0)
 require("which-key").add({
     { "<leader>c", group = "[C]ode" },
     { "<leader>d", group = "[D]ocument" },
+    { "<leader>k", group = "[K]ustomize" },
     { "<leader>r", group = "[R]ename" },
     { "<leader>s", group = "[S]earch" },
     { "<leader>w", group = "[W]orkspace" },
