@@ -10,6 +10,8 @@ alias .......="cd ../../../../../.."
 alias ........="cd ../../../../../../.."
 alias .........="cd ../../../../../../../.."
 
+alias alpha="echo ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
 alias bat="bat --theme=TwoDark"
 
 alias c="clear"
