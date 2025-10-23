@@ -21,7 +21,7 @@
   "editor.cursorBlinking": "phase",
   "editor.definitionLinkOpensInPeek": true,
   "editor.occurrencesHighlight": "off",
-  "editor.matchBrackets": false,
+  "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 200,
   "editor.minimap.renderCharacters": false,
@@ -619,7 +619,16 @@
   },
   "editor.multiCursorLimit": 20000,
   "git.ignoreMissingGitWarning": true,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.variableTypes": true
   // "go.inlayHints.functionTypeParameters": true,
