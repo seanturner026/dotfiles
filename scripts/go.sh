@@ -1,7 +1,7 @@
 go install -v github.com/fatih/gomodifytags@v1.16.0
 go install github.com/awslabs/eks-node-viewer/cmd/eks-node-viewer@latest
 go install github.com/charmbracelet/glow@latest # https://github.com/charmbracelet/glow
-go install github.com/cosmtrek/air@latest
+go install github.com/air-verse/air@latest # https://github.com/air-verse/air
 go install github.com/danielmiessler/fabric@latest # https://github.com/danielmiessler/fabric
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.54.1
 go install github.com/google/ko@latest
