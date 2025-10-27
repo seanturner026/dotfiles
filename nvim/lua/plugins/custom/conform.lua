@@ -20,7 +20,13 @@ return {
             -- when no formatter is setup for a filetype, fallback to formatting
             -- via the LSP. This is relevant e.g. for taplo (toml LSP), where the
             -- LSP can handle the formatting for us
-            format_on_save = { timeout_ms = 500, lsp_format = "fallback", async = false },
+            format_on_save = function(bufnr)
+                -- Disable for Go files since go.nvim handles it
+                if vim.bo[bufnr].filetype == "go" then
+                    return
+                end
+                return { timeout_ms = 500, lsp_format = "fallback", async = false }
+            end,
         })
     end,
 }

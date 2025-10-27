@@ -204,7 +204,7 @@
   "gitlens.codeLens.enabled": false,
   "go.toolsManagement.autoUpdate": true,
   "python.showStartPage": false,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Tokyo Night Storm",
   "aws.profile": "profile:default",
   "redhat.telemetry.enabled": false,
   "docker.showStartPage": false,
