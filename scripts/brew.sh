@@ -50,6 +50,7 @@ brew install argocd \
     neovim \
     netlify-cli \
     nmap \
+    pgformatter \
     php \
     pipx \
     postgresql \

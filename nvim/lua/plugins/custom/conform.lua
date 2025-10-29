@@ -14,6 +14,7 @@ return {
                     end
                 end,
                 lua = { "stylua" },
+                sql = { "pg_format" },
                 yaml = { "prettier" },
             },
 
