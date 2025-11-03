@@ -203,7 +203,7 @@
   "gitlens.codeLens.enabled": false,
   "go.toolsManagement.autoUpdate": true,
   "python.showStartPage": false,
-  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.colorTheme": "Tokyo Night",
   "aws.profile": "profile:default",
   "redhat.telemetry.enabled": false,
   "docker.showStartPage": false,
@@ -627,7 +627,9 @@
   },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  }
+  },
+  "editor.matchBrackets": "never",
+  "github.copilot.nextEditSuggestions.enabled": true
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.variableTypes": true
   // "go.inlayHints.functionTypeParameters": true,
