@@ -239,21 +239,22 @@ local servers = {
     },
     docker_compose_language_service = {},
     dockerls = {},
-    -- gopls = {}, -- handled by go.nvim
     helm_ls = {},
     html = { filetypes = { "html", "twig", "hbs" } },
     jsonls = {},
-    tailwindcss = {
-        filetypes = {
-            "templ",
-        },
-        init_options = {
-            userLanguages = {
-                templ = "html",
+    lua_ls = {
+        Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+            diagnostics = {
+                disable = { "missing-fields" },
+                globals = {
+                    "vim",
+                    "require",
+                },
             },
         },
     },
-    templ = {},
     terraformls = {},
     yamlls = {
         settings = {
@@ -282,19 +283,6 @@ local servers = {
                     ["https://json.schemastore.org/kustomization.json"] = "kustomization.{yml,yaml}",
                     ["https://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
                     ["https://json.schemastore.org/stylelintrc"] = ".stylelintrc.{yml,yaml}",
-                },
-            },
-        },
-    },
-    lua_ls = {
-        Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-            diagnostics = {
-                disable = { "missing-fields" },
-                globals = {
-                    "vim",
-                    "require",
                 },
             },
         },
