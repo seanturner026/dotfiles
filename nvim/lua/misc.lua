@@ -255,6 +255,7 @@ local servers = {
             },
         },
     },
+    postgres_lsp = {},
     terraformls = {},
     yamlls = {
         settings = {
