@@ -257,6 +257,8 @@ local servers = {
     },
     postgres_lsp = {},
     terraformls = {},
+    svelte = {},
+    ts_ls = {},
     yamlls = {
         settings = {
             redhat = { telemetry = { enabled = false } },
