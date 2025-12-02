@@ -53,6 +53,7 @@ brew install argocd \
     pgformatter \
     php \
     pipx \
+    pnpm \
     postgresql \
     pre-commit \
     rbenv \
