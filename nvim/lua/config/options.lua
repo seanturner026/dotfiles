@@ -45,6 +45,7 @@ vim.opt.textwidth = 120
 vim.opt.formatoptions = "c"
 
 vim.o.completeopt = "menuone,noselect" -- Set completeopt to have a better completion experience
+vim.o.cmdheight = 0
 vim.o.termguicolors = true
 
 vim.o.winborder = "rounded"
