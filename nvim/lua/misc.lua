@@ -229,14 +229,6 @@ require("mason-lspconfig").setup({
 local servers = {
     rust_analyzer = {},
     bashls = {},
-    basedpyright = {
-        analysis = {
-            autoImportCompletions = true,
-            autoSearchPaths = true,
-            diagnosticMode = "workspace",
-            typeCheckingMode = "off", -- standard, strict, all, off, basic
-        },
-    },
     docker_compose_language_service = {},
     dockerls = {},
     helm_ls = {},
@@ -259,6 +251,11 @@ local servers = {
     terraformls = {},
     svelte = {},
     ts_ls = {},
+    ty = {
+        completions = {
+            autoImport = true,
+        },
+    },
     yamlls = {
         settings = {
             redhat = { telemetry = { enabled = false } },
