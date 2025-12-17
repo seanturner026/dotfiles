@@ -40,9 +40,9 @@ vim.opt.hlsearch = false
 -- instead raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
 
-vim.opt.tabstop = 4
-vim.opt.textwidth = 120
-vim.opt.formatoptions = "c"
+vim.o.tabstop = 4
+vim.o.textwidth = 120
+vim.o.formatoptions = "c"
 
 vim.o.completeopt = "menuone,noselect" -- Set completeopt to have a better completion experience
 vim.o.cmdheight = 0
@@ -67,3 +67,4 @@ vim.filetype.add({
 })
 
 vim.lsp.set_log_level("off") -- Prevents LSP client log too large errors
+vim.diagnostic.config({ virtual_text = true })

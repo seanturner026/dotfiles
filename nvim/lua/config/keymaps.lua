@@ -32,6 +32,15 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
+-- Diagnostics toggle
+local diagnostics_enabled = true
+
+vim.keymap.set("n", "<leader>dt", function()
+    diagnostics_enabled = not diagnostics_enabled
+    vim.diagnostic.enable(diagnostics_enabled)
+    vim.notify("Diagnostics " .. (diagnostics_enabled and "enabled" or "disabled"), vim.log.levels.INFO)
+end, { desc = "Toggle diagnostics" })
+
 -- Register blackholes
 vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("n", "c", '"_c')
