@@ -11,6 +11,7 @@
   "grug-far.nvim": { "branch": "main", "commit": "385d1949dc21d0c39e7a74b4f4a25da18817bc86" },
   "guess-indent.nvim": { "branch": "main", "commit": "84a4987ff36798c2fc1169cbaff67960aed9776f" },
   "guihua.lua": { "branch": "master", "commit": "87bea7b98429405caf2a0ce4d029b027bb017c70" },
+  "harper": { "branch": "master", "commit": "08f053654903c5e9a6f23272ee995d724a234aad" },
   "kustomize.nvim": { "branch": "main", "commit": "117da376f0400ce92f3b86889ea2b5604642914e" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "leap.nvim": { "branch": "main", "commit": "3c95fd0b95d03ad0358acf2a8d2256850266afce" },

@@ -134,16 +134,11 @@ alias lsg="ls | grep"
 
 alias n="nvim"
 alias ng="cat ~/Dropbox/notes.md | grep"
-alias npw="python -c \"import string; import random; print(''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=30)))\" | pbcopy"
 
 alias pylc="cp ~/python/github/dotfiles/.pylintrc ."
 alias pylcf="cp -f ~/python/github/dotfiles/.pylintrc ."
 
 alias rl="source ~/.zshrc"
-
-alias sls="serverless"
-alias slsd="serverless deploy"
-alias slsws="serverless wsgi serve"
 
 alias t="tree -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
 alias ta="tree -a -C -I '.DS_Store|.git|.ipynb_checkpoints|__pycache__|node_modules|vendor|*.pyc|venv'"
