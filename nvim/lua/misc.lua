@@ -231,6 +231,7 @@ local servers = {
     bashls = {},
     docker_compose_language_service = {},
     dockerls = {},
+    harper_ls = {},
     helm_ls = {},
     html = { filetypes = { "html", "twig", "hbs" } },
     jsonls = {},
