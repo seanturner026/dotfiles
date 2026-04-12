@@ -1,11 +1,12 @@
 #!/bin/bash
 
 mkdir -p ~/.config/tmux
+mkdir -p ~/.claude/skills
 
 stow -v -R -t ~/ bash
+stow -v -R -t ~/ claude
 stow -v -R -t ~/ git
 stow -v -R -t ~/ vim
-stow -v -R -t ~/ zsh
 stow -v -R -t ~/ zsh
 stow -v -R -t ~/.config starship
 stow -v -R -t ~/.config/ghostty ghostty
