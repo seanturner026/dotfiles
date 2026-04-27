@@ -9,7 +9,6 @@ local function options(config)
   config.font_size = 16.0
   config.font = wezterm.font("RobotoMono Nerd Font")
 
-  config.macos_window_background_blur = 30
   config.window_background_opacity = 1.0
   config.window_decorations = "RESIZE"
 
