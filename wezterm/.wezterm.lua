@@ -7,6 +7,7 @@ workspace_manager.get_choices = false
 workspace_manager.session_enabled = true
 workspace_manager.session_restore_on_startup = true
 workspace_manager.session_periodic_save_all = true
+workspace_manager.session_exclude_workspaces = {}
 
 local config = wezterm.config_builder()
 
