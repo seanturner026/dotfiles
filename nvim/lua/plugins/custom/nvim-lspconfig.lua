@@ -113,36 +113,9 @@ return {
         end, { desc = "Toggle [H]arper" })
 
         vim.keymap.set("n", "<leader>cn", function()
-            -- Iterate diagnostics with snacks code-action picker. After the
-            -- picker closes (apply or cancel), jump to the next diagnostic
-            -- and reopen. <Esc> repeatedly to bail.
-            local function step()
-                local ok = pcall(vim.diagnostic.jump, { count = 1, float = false, wrap = false })
-                if not ok then
-                    vim.notify("Done iterating diagnostics", vim.log.levels.INFO)
-                    return
-                end
-
-                local au_id
-                au_id = vim.api.nvim_create_autocmd("WinClosed", {
-                    callback = function(args)
-                        local win = tonumber(args.match)
-                        if not win or not vim.api.nvim_win_is_valid(win) then
-                            return
-                        end
-                        local buf = vim.api.nvim_win_get_buf(win)
-                        local ft = vim.bo[buf].filetype or ""
-                        if ft:match("^snacks") then
-                            vim.api.nvim_del_autocmd(au_id)
-                            vim.schedule(step)
-                        end
-                    end,
-                })
-
-                Snacks.picker.code_actions()
-            end
-            step()
-        end, { desc = "[C]ode action [N]ext (iterate)" })
+            vim.diagnostic.jump({ count = 1, float = false })
+            require("tiny-code-action").code_action()
+        end, { desc = "[C]ode action at [N]ext diagnostic" })
 
         -- Whenever an LSP attaches to a buffer, we will run this function.
         --
