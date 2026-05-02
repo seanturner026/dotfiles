@@ -12,9 +12,30 @@ return {
             config = {
                 header = splash.frames[1],
                 center = {
-                    { icon = "  ", desc = "Find File", key = "f", action = "Telescope find_files" },
-                    { icon = "  ", desc = "Live Grep", key = "g", action = "Telescope live_grep" },
-                    { icon = "  ", desc = "Recent Files", key = "r", action = "Telescope oldfiles" },
+                    {
+                        icon = "  ",
+                        desc = "Find File",
+                        key = "f",
+                        action = function()
+                            Snacks.picker.files()
+                        end,
+                    },
+                    {
+                        icon = "  ",
+                        desc = "Live Grep",
+                        key = "g",
+                        action = function()
+                            Snacks.picker.grep()
+                        end,
+                    },
+                    {
+                        icon = "  ",
+                        desc = "Recent Files",
+                        key = "r",
+                        action = function()
+                            Snacks.picker.recent()
+                        end,
+                    },
                     { icon = "  ", desc = "Quit", key = "q", action = "qa" },
                 },
             },
