@@ -139,7 +139,7 @@ return {
                     end,
                 })
 
-                Snacks.picker.code_actions()
+                vim.lsp.buf.code_action()
             end
             step()
         end, { desc = "[C]ode action [N]ext (iterate)" })

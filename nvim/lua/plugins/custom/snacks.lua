@@ -3,7 +3,7 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-        picker = { enabled = true },
+        picker = { enabled = true, ui_select = true },
     },
     keys = {
         {
