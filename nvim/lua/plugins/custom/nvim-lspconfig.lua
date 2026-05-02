@@ -111,6 +111,58 @@ return {
             end
         end, { desc = "Toggle [H]arper" })
 
+        vim.keymap.set("n", "<leader>dH", function()
+            local bufnr = vim.api.nvim_get_current_buf()
+            local clients = vim.lsp.get_clients({ name = "harper_ls", bufnr = bufnr })
+            if #clients == 0 then
+                vim.notify("Harper not attached to this buffer", vim.log.levels.WARN)
+                return
+            end
+            local client = clients[1]
+            local ns = vim.lsp.diagnostic.get_namespace(client.id)
+            local diagnostics = vim.diagnostic.get(bufnr, { namespace = ns })
+            if #diagnostics == 0 then
+                vim.notify("No Harper diagnostics", vim.log.levels.INFO)
+                return
+            end
+
+            -- Apply fixes bottom-up so earlier positions stay valid after each edit.
+            table.sort(diagnostics, function(a, b)
+                if a.lnum ~= b.lnum then
+                    return a.lnum > b.lnum
+                end
+                return a.col > b.col
+            end)
+
+            local applied = 0
+            for _, diag in ipairs(diagnostics) do
+                local lsp_diag = diag.user_data and diag.user_data.lsp
+                local params = {
+                    textDocument = vim.lsp.util.make_text_document_params(bufnr),
+                    range = {
+                        start = { line = diag.lnum, character = diag.col },
+                        ["end"] = { line = diag.end_lnum or diag.lnum, character = diag.end_col or diag.col },
+                    },
+                    context = {
+                        diagnostics = lsp_diag and { lsp_diag } or {},
+                        triggerKind = vim.lsp.protocol.CodeActionTriggerKind.Invoked,
+                    },
+                }
+                local resp = client:request_sync("textDocument/codeAction", params, 1000, bufnr)
+                if resp and resp.result then
+                    for _, action in ipairs(resp.result) do
+                        if action.edit and (action.kind == "quickfix" or action.isPreferred) then
+                            vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
+                            applied = applied + 1
+                            break
+                        end
+                    end
+                end
+            end
+
+            vim.notify(string.format("Harper: applied %d fix%s", applied, applied == 1 and "" or "es"), vim.log.levels.INFO)
+        end, { desc = "Apply all [H]arper fixes" })
+
         -- Whenever an LSP attaches to a buffer, we will run this function.
         --
         -- See `:help LspAttach` for more information about this autocmd event.
