@@ -95,11 +95,12 @@ return {
             vim.lsp.enable(name)
         end
 
-        local ensure_installed = vim.tbl_keys(servers)
-        vim.list_extend(ensure_installed, { "stylua" })
-        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+        require("mason-lspconfig").setup({
+            ensure_installed = vim.tbl_keys(servers),
+            automatic_installation = true,
+        })
 
-        require("mason-lspconfig").setup({ ensure_installed = {} })
+        require("mason-tool-installer").setup({ ensure_installed = { "stylua" } })
 
         vim.keymap.set("n", "<leader>dh", function()
             local clients = vim.lsp.get_clients({ name = "harper_ls" })
