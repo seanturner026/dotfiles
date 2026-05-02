@@ -114,7 +114,7 @@ return {
 
         vim.keymap.set("n", "<leader>cn", function()
             vim.diagnostic.jump({ count = 1, float = false })
-            require("tiny-code-action").code_action()
+            vim.lsp.buf.code_action()
         end, { desc = "[C]ode action at [N]ext diagnostic" })
 
         -- Whenever an LSP attaches to a buffer, we will run this function.
@@ -128,11 +128,8 @@ return {
                     mode = mode or "n"
                     vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
                 end
-                local code_action = function()
-                    require("tiny-code-action").code_action()
-                end
-                map("<leader>ca", code_action, "[C]ode [A]ction", { "n", "x" })
-                map("gra", code_action, "[G]oto Code [A]ction", { "n", "x" })
+                map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
+                map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
                 map("grr", function()
                     Snacks.picker.lsp_references()
                 end, "[G]oto [R]eferences")
