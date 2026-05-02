@@ -18,7 +18,7 @@ return {
         vim.keymap.set("n", "zM", require("ufo").closeAllFolds, { desc = "Close all folds" })
         vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "Open all folds" })
 
-        vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+        vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
         vim.o.foldcolumn = "0"
         vim.o.foldenable = true
         vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
