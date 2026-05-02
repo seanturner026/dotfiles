@@ -13,6 +13,9 @@ return {
             { "<leader>t", group = "[T]oggle" },
             { "gr", group = "[G]oto (LSP)" },
             { "z", group = "Fold" },
+            { "zk", desc = "Peek Fold" },
+            { "zM", desc = "Close all folds" },
+            { "zR", desc = "Open all folds" },
         },
     },
     keys = {
