@@ -29,7 +29,7 @@ local function keys(config)
     { mods = "OPT", key = "k", action = action.ActivatePaneDirection("Up") },
     { mods = "OPT", key = "l", action = action.ActivatePaneDirection("Right") },
 
-    -- Reside panes without hitting leader multiple times
+    -- Resize panes without hitting leader multiple times
     {
       key = "r",
       mods = "LEADER",
@@ -37,7 +37,7 @@ local function keys(config)
     },
 
     -- Workspace bindings (similar to tmux sessions)
-    { mods = "CMD", key = "[", action = action.SwitchWorkspaceRelative(1) },
+    { mods = "CMD", key = "[", action = action.SwitchWorkspaceRelative(-1) },
     { mods = "CMD", key = "]", action = action.SwitchWorkspaceRelative(1) },
     { mods = "OPT", key = "v", action = action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
   }
