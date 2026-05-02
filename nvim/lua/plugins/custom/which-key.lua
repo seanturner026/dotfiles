@@ -1,7 +1,19 @@
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+        spec = {
+            { "<leader>d", group = "[D]iagnostic" },
+            { "<leader>f", group = "[F]ind" },
+            { "<leader>g", group = "[G]it" },
+            { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+            { "<leader>k", group = "[K]ustomize" },
+            { "<leader>r", group = "[R]eplace", mode = { "n", "v" } },
+            { "<leader>s", group = "[S]earch" },
+            { "<leader>t", group = "[T]oggle" },
+            { "gr", group = "[G]oto (LSP)" },
+        },
+    },
     keys = {
         {
             "<leader>?",

@@ -207,18 +207,6 @@ vim.defer_fn(function()
     })
 end, 0)
 
--- document existing key chains
-require("which-key").add({
-    { "<leader>c", group = "[C]ode" },
-    { "<leader>d", group = "[D]ocument" },
-    { "<leader>k", group = "[K]ustomize" },
-    { "<leader>r", group = "[R]ename" },
-    { "<leader>s", group = "[S]earch" },
-    { "<leader>w", group = "[W]orkspace" },
-    { "<leader>t", group = "[T]oggle" },
-    { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
-})
-
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require("mason").setup()
