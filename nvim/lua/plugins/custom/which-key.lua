@@ -10,7 +10,6 @@ return {
             { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
             { "<leader>k", group = "[K]ustomize" },
             { "<leader>r", group = "[R]eplace", mode = { "n", "v" } },
-            { "<leader>s", group = "[S]earch" },
             { "<leader>t", group = "[T]oggle" },
             { "gr", group = "[G]oto (LSP)" },
         },
