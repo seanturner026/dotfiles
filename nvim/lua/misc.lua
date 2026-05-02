@@ -235,14 +235,16 @@ local servers = {
     html = { filetypes = { "html", "twig", "hbs" } },
     jsonls = {},
     lua_ls = {
-        Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-            diagnostics = {
-                disable = { "missing-fields" },
-                globals = {
-                    "vim",
-                    "require",
+        settings = {
+            Lua = {
+                workspace = { checkThirdParty = false },
+                telemetry = { enable = false },
+                diagnostics = {
+                    disable = { "missing-fields" },
+                    globals = {
+                        "vim",
+                        "require",
+                    },
                 },
             },
         },
@@ -252,8 +254,10 @@ local servers = {
     svelte = {},
     ts_ls = {},
     ty = {
-        completions = {
-            autoImport = true,
+        settings = {
+            completions = {
+                autoImport = true,
+            },
         },
     },
     yamlls = {
