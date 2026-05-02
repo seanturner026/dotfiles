@@ -12,6 +12,7 @@ return {
             { "<leader>r", group = "[R]eplace", mode = { "n", "v" } },
             { "<leader>t", group = "[T]oggle" },
             { "gr", group = "[G]oto (LSP)" },
+            { "z", group = "Fold" },
         },
     },
     keys = {
