@@ -4,6 +4,9 @@ local workspace_manager = wezterm.plugin.require(
   "https://github.com/ryanmsnyder/workspace-manager.wezterm"
 )
 workspace_manager.get_choices = false
+workspace_manager.session_enabled = true
+workspace_manager.session_restore_on_startup = true
+workspace_manager.session_periodic_save_all = true
 
 local config = wezterm.config_builder()
 
