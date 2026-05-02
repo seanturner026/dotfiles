@@ -23,6 +23,7 @@ return {
             bashls = {},
             docker_compose_language_service = {},
             dockerls = {},
+            gopls = {},
             harper_ls = {
                 filetypes = { "markdown", "gitcommit", "text" },
             },
