@@ -1,9 +1,10 @@
 local wezterm = require("wezterm")
 local action = wezterm.action
 
-local function keys(config)
+local function keys(config, workspace_manager)
   config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 10000 }
-  config.keys = {
+
+  local user_keys = {
 
     { key = "f", mods = "CTRL", action = action.ToggleFullScreen },
 
@@ -36,24 +37,29 @@ local function keys(config)
       action = action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
     },
 
-    -- Workspace bindings (similar to tmux sessions)
-    { mods = "CMD", key = "[", action = action.SwitchWorkspaceRelative(-1) },
-    { mods = "CMD", key = "]", action = action.SwitchWorkspaceRelative(1) },
-    { mods = "OPT", key = "v", action = action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+    -- Workspace bindings (similar to tmux sessions) — routed through workspace_manager
+    -- so that switching restores tab/pane layout and scrollback.
+    { mods = "CMD", key = "[", action = workspace_manager.previous_workspace() },
+    { mods = "CMD", key = "]", action = workspace_manager.next_workspace() },
+    { mods = "OPT", key = "v", action = workspace_manager.workspace_switcher() },
   }
 
-  config.key_tables = {
-    resize_pane = {
-      { key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
-      { key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
-      { key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
-      { key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
-      { key = "Enter", action = "PopKeyTable" },
-      { key = "Escape", action = "PopKeyTable" },
-    },
+  config.keys = config.keys or {}
+  for _, k in ipairs(user_keys) do
+    table.insert(config.keys, k)
+  end
+
+  config.key_tables = config.key_tables or {}
+  config.key_tables.resize_pane = {
+    { key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
+    { key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
+    { key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
+    { key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
+    { key = "Enter", action = "PopKeyTable" },
+    { key = "Escape", action = "PopKeyTable" },
   }
 
-  -- LEADER + number to activate that tab
+  -- OPT + number to activate that tab
   for i = 1, 9 do
     table.insert(config.keys, {
       mods = "OPT",
