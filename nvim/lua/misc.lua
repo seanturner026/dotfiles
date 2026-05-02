@@ -101,18 +101,6 @@ vim.keymap.set("n", "<leader>sr", require("telescope.builtin").resume, { desc = 
 vim.keymap.set("n", "<leader>ss", require("telescope.builtin").builtin, { desc = "[S]earch [S]elect Telescope" })
 vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
 
--- Open Telescope on start
-vim.api.nvim_create_autocmd("VimEnter", {
-    callback = function()
-        if vim.bo.filetype == "man" then
-            return
-        end
-        if vim.fn.argv(0) == "" then
-            require("telescope.builtin").find_files()
-        end
-    end,
-})
-
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
