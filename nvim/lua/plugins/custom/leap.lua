@@ -1,7 +1,7 @@
 return {
     "https://codeberg.org/andyg/leap.nvim",
-    config = function()
-        vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
-        vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap)")
-    end,
+    keys = {
+        { "s", "<Plug>(leap)", mode = { "n", "x", "o" } },
+        { "S", "<Plug>(leap)", mode = { "n", "x", "o" } },
+    },
 }
