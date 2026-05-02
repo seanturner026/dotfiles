@@ -219,8 +219,6 @@ require("which-key").add({
     { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 })
 
--- mason-lspconfig requires that these setup functions are called in this order
--- before setting up the servers.
 require("mason").setup()
 
 local servers = {
