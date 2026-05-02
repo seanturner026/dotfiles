@@ -222,9 +222,6 @@ require("which-key").add({
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require("mason").setup()
-require("mason-lspconfig").setup({
-    automatic_installation = true,
-})
 
 local servers = {
     rust_analyzer = {},
