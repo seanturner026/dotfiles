@@ -15,8 +15,8 @@ return {
             end
         end, { desc = "Peek Fold" })
 
-        vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-        vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+        vim.keymap.set("n", "zM", require("ufo").closeAllFolds, { desc = "Close all folds" })
+        vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "Open all folds" })
 
         vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
         vim.o.foldcolumn = "0"

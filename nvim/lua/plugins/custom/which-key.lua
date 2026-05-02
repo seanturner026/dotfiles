@@ -3,6 +3,7 @@ return {
     event = "VeryLazy",
     opts = {
         spec = {
+            { "<leader>c", group = "[C]ode", mode = { "n", "x" } },
             { "<leader>d", group = "[D]iagnostic" },
             { "<leader>f", group = "[F]ind" },
             { "<leader>g", group = "[G]it" },
