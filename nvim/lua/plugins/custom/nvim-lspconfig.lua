@@ -22,6 +22,9 @@ return {
             bashls = {},
             docker_compose_language_service = {},
             dockerls = {},
+            harper_ls = {
+                filetypes = { "markdown", "gitcommit", "text" },
+            },
             helm_ls = {},
             html = { filetypes = { "html", "twig", "hbs" } },
             jsonls = {},
@@ -96,6 +99,17 @@ return {
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
         require("mason-lspconfig").setup({ ensure_installed = {} })
+
+        vim.keymap.set("n", "<leader>dh", function()
+            local clients = vim.lsp.get_clients({ name = "harper_ls" })
+            if #clients > 0 then
+                vim.cmd("LspStop harper_ls")
+                vim.notify("Harper disabled", vim.log.levels.INFO)
+            else
+                vim.cmd("LspStart harper_ls")
+                vim.notify("Harper enabled", vim.log.levels.INFO)
+            end
+        end, { desc = "Toggle [H]arper" })
 
         -- Whenever an LSP attaches to a buffer, we will run this function.
         --
