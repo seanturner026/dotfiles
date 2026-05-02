@@ -1,6 +1,7 @@
 -- https://github.com/nvim-lualine/lualine.nvim/blob/f2de8f2fd685ae3242febc9dc918028d44ba9cd1/examples/bubbles.lua
 return {
     "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
     config = function()
         require("lualine").setup({
             options = {
