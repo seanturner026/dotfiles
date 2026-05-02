@@ -12,8 +12,91 @@ return {
         -- Additional lua configuration, makes nvim stuff amazing!
         "folke/neodev.nvim",
         "saghen/blink.cmp",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
+        require("mason").setup()
+
+        local servers = {
+            rust_analyzer = {},
+            bashls = {},
+            docker_compose_language_service = {},
+            dockerls = {},
+            helm_ls = {},
+            html = { filetypes = { "html", "twig", "hbs" } },
+            jsonls = {},
+            lua_ls = {
+                settings = {
+                    Lua = {
+                        workspace = { checkThirdParty = false },
+                        telemetry = { enable = false },
+                        diagnostics = {
+                            disable = { "missing-fields" },
+                            globals = {
+                                "vim",
+                                "require",
+                            },
+                        },
+                    },
+                },
+            },
+            postgres_lsp = {},
+            terraformls = {},
+            svelte = {},
+            ts_ls = {},
+            ty = {
+                settings = {
+                    completions = {
+                        autoImport = true,
+                    },
+                },
+            },
+            yamlls = {
+                settings = {
+                    redhat = { telemetry = { enabled = false } },
+                    yaml = {
+                        completion = true,
+                        hover = true,
+                        validate = true,
+                        format = {
+                            enable = true,
+                        },
+                        schemaStore = {
+                            -- Must disable built-in schemaStore support to use
+                            -- schemas from SchemaStore.nvim plugin
+                            enable = true,
+                            -- Avoid TypeError: Cannot read properties of undefined (reading "length")
+                            url = "",
+                        },
+                        schemas = {
+                            ["kubernetes"] = "*.{yaml,yml}",
+                            -- JSON & YAML schemas http://schemastore.org/json/
+                            ["https://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+                            ["https://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
+                            ["https://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+                            ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
+                            ["https://json.schemastore.org/kustomization.json"] = "kustomization.{yml,yaml}",
+                            ["https://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
+                            ["https://json.schemastore.org/stylelintrc"] = ".stylelintrc.{yml,yaml}",
+                        },
+                    },
+                },
+            },
+        }
+
+        local capabilities = require("blink.cmp").get_lsp_capabilities()
+        for name, server in pairs(servers) do
+            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+            vim.lsp.config(name, server)
+            vim.lsp.enable(name)
+        end
+
+        local ensure_installed = vim.tbl_keys(servers)
+        vim.list_extend(ensure_installed, { "stylua" })
+        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+        require("mason-lspconfig").setup({ ensure_installed = {} })
+
         -- Whenever an LSP attaches to a buffer, we will run this function.
         --
         -- See `:help LspAttach` for more information about this autocmd event.
