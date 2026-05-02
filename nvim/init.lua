@@ -1,5 +1,5 @@
 require("config.options")
-require("core.lazy")
+require("config.lazy")
 require("config.keymaps")
 require("config.theme")
 require("misc")
