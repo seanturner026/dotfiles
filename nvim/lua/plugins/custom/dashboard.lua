@@ -17,7 +17,7 @@ return {
                         desc = "Find File",
                         key = "f",
                         action = function()
-                            Snacks.picker.files()
+                            Snacks.picker.smart()
                         end,
                     },
                     {
