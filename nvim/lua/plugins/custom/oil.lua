@@ -4,7 +4,18 @@ return {
     keys = {
         { "-", "<CMD>Oil --float<CR>", desc = "Open parent directory" },
     },
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = {
+        { "nvim-tree/nvim-web-devicons" },
+        {
+            "malewicz1337/oil-git.nvim",
+            dependencies = { "stevearc/oil.nvim" },
+            opts = {
+                show_file_highlights = true,
+                show_directory_highlights = false,
+                show_ignored_files = true,
+            },
+        },
+    },
     opts = {
         default_file_explorer = false,
         delete_to_trash = true,
