@@ -4,6 +4,7 @@ return {
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
+        gh = {},
         picker = {
             enabled = true,
             ui_select = true,
@@ -47,6 +48,34 @@ return {
                 Snacks.picker.git_log()
             end,
             desc = "[G]it [L]og",
+        },
+        {
+            "<leader>gi",
+            function()
+                Snacks.picker.gh_issue()
+            end,
+            desc = "GitHub [I]ssues (open)",
+        },
+        {
+            "<leader>gI",
+            function()
+                Snacks.picker.gh_issue({ state = "all" })
+            end,
+            desc = "GitHub [I]ssues (all)",
+        },
+        {
+            "<leader>gp",
+            function()
+                Snacks.picker.gh_pr()
+            end,
+            desc = "GitHub [P]ull Requests (open)",
+        },
+        {
+            "<leader>gP",
+            function()
+                Snacks.picker.gh_pr({ state = "all" })
+            end,
+            desc = "GitHub [P]ull Requests (all)",
         },
     },
 }
