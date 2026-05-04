@@ -4,7 +4,12 @@ return {
     priority = 999,
     config = function()
         local devicons = require("nvim-web-devicons")
-        devicons.setup({})
+        devicons.setup({
+            override_by_extension = {
+                yaml = { icon = "", color = "#cb171e", cterm_color = "160", name = "Yaml" },
+                yml = { icon = "", color = "#cb171e", cterm_color = "160", name = "Yml" },
+            },
+        })
 
         -- Snacks picker passes full paths (e.g. "docker/compose.yaml") to
         -- get_icon, but devicons only matches icons_by_filename on the
