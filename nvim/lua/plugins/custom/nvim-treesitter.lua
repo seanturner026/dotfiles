@@ -25,6 +25,8 @@ return {
                     "jsonc",
                     "lua",
                     "make",
+                    "markdown",
+                    "markdown_inline",
                     "python",
                     "sql",
                     "terraform",
