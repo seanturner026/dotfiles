@@ -43,6 +43,13 @@ return {
             desc = "Find existing buffers",
         },
         {
+            "<leader>sr",
+            function()
+                Snacks.picker.resume()
+            end,
+            desc = "[S]earch [R]esume",
+        },
+        {
             "<leader>gl",
             function()
                 Snacks.picker.git_log()
