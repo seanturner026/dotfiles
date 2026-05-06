@@ -13,9 +13,14 @@ return {
                     multi = { "buffers", "recent", "files" },
                     matcher = { frecency = true, cwd_bonus = true },
                     filter = { cwd = true },
+                    hidden = true,
                 },
                 files = {
                     matcher = { frecency = true, cwd_bonus = true },
+                    hidden = true,
+                },
+                recent = {
+                    filter = { cwd = true },
                 },
             },
         },
