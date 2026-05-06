@@ -1,6 +1,9 @@
 # ea - alias for editing aliases
 alias ea='nvim ~/.bash_aliases; source ~/.bash_aliases && source $HOME/.bash_aliases && echo "aliases sourced  --ok."'
 
+# ef - alias for editing functions
+alias ef='nvim ~/.bash_functions; source ~/.bash_functions && echo "functions sourced  --ok."'
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
