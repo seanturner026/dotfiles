@@ -24,6 +24,7 @@ return {
                 },
             },
         },
+        terminal = {},
     },
     keys = {
         {
@@ -88,6 +89,14 @@ return {
                 Snacks.picker.gh_pr({ state = "all" })
             end,
             desc = "GitHub [P]ull Requests (all)",
+        },
+        {
+            "<leader>tt",
+            function()
+                Snacks.terminal.toggle()
+            end,
+            desc = "[T]oggle [T]erminal",
+            mode = { "n", "t" },
         },
     },
 }
