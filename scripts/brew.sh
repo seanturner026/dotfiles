@@ -73,4 +73,5 @@ brew install argocd \
     wget \
     wireshark \
     ykman \
-    yq
+    yq \
+    zizmor
