@@ -76,6 +76,20 @@ variable "iam_role_name" { ... }
 
 ## Conventions
 
+### Comments
+
+Comment sparingly. Don't add a comment that just names or restates a resource,
+local, or expression — the code is self-evident. Skip rationale/backstory (why
+the resource exists, what reads it, alternatives); that belongs in the PR or
+commit message. Comment only a genuine non-obvious constraint (an AWS quirk, an
+ordering dependency, a `lifecycle`/`ignore_changes` reason).
+
+**Bad:**
+```hcl
+// Per-service Aurora DSQL clusters, one per service declared with RemoteState(dsql=True).
+resource "aws_dsql_cluster" "this" { ... }
+```
+
 ### Provider Configuration
 
 ```hcl

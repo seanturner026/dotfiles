@@ -2,6 +2,18 @@ gfco() {
   git fetch origin "$1" && git checkout "$1"
 }
 
+# wtr — worktree reset: discard all changes and reset to origin/main.
+#   usage: wtr
+wtr() {
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
+    echo "wtr: not inside a git worktree" >&2
+    return 1
+  }
+  git fetch origin || return $?
+  git reset --hard origin/main || return $?
+  git clean -fd
+}
+
 # jira-new — create a Jira ticket: title as arg, clipboard as description,
 # assigned to you, then fzf-pick a status to transition to.
 #   usage: jira-new "ticket title"

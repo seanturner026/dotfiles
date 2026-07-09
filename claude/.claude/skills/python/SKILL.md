@@ -24,6 +24,26 @@ from myapp.logging_config import logger
 from myapp.logging_config import logger
 ```
 
+Don't put rationale or backstory in comments/docstrings — *why* a thing
+exists, what permissions/infra it depends on, alternatives considered. That
+goes in the PR description or commit message; in source it's noise that goes
+stale. Comment only a genuine non-obvious gotcha (a workaround for an external
+quirk). Keep docstrings to a terse one-line statement of *what*.
+
+**Bad:**
+```python
+def _resolve_host(tier: str) -> str:
+    """Look up the tier's DSQL endpoint from SSM. Engineers have dsql:DbConnect
+    but not always ssm:GetParameter on this path — if the read is denied, the
+    caller should pass --host explicitly (the endpoint isn't secret)."""
+```
+
+**Good:**
+```python
+def _resolve_host(tier: str) -> str:
+    """Look up the tier's DSQL endpoint from SSM."""
+```
+
 ## Docstrings
 
 Use this style for docstrings:
