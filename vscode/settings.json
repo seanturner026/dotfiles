@@ -629,10 +629,11 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": false,
   "github.copilot.nextEditSuggestions.enabled": true,
   "svelte.enable-ts-plugin": true,
-  "livePreview.notifyOnOpenLooseFile": false
+  "livePreview.notifyOnOpenLooseFile": false,
+  "security.promptForLocalFileProtocolHandling": false
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.variableTypes": true
   // "go.inlayHints.functionTypeParameters": true,
