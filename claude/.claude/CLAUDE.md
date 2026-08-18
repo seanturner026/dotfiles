@@ -1,10 +1,14 @@
-NEVER USE THE `aws` CLI
+# Cloud CLIs
 
-# Task Management
+`aws` and `kubectl` are read-only. Reads (`describe`, `get`, `list`, `logs`) are fine.
+Anything that creates, changes, or deletes state: stop and ask me to run it.
 
-1. **ALWAYS** break work into discrete approval tasks
-2. Wait for task list approval before writing any code.
-3. Keep todos current - Update the list visibly in the chat as work evolves to reflect actual remaining tasks
+# Prompt Aliases
+
+- DTAA: Does this add anything?
+- MTOS: Make this one sentence.
+- SDTS: Slim down this selection.
+- WDYT: What do you think?
 
 # Pull Requests
 
