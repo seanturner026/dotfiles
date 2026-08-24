@@ -9,6 +9,99 @@ Python conventions. Follow these whenever writing or reviewing `.py` files.
 
 We're on Python 3.12 at least, which means type hint types do not need to be imported.
 
+## Dependencies
+
+Use `uv` for dependency management: `uv add <package>`, `uv add --dev <package>`, test-only deps under
+`[project.optional-dependencies].test`.
+Use `boto3-stubs[...]` for typed AWS clients.
+
+## Formatting & Linting
+
+`ruff` is configured per package: line-length 120, 4-space indent, double quotes, lint rules `E`/`F`/`I`. Run before committing:
+
+```bash
+uv run ruff format .
+uv run ruff check --fix .
+```
+
+## CLI Commands
+
+CLIs use `click` with a `[project.scripts]` entrypoint pointing at `<pkg>.cli:main`. Keep CLI orchestration and stateful
+setup inside the command function; factor pure logic into module-level helpers.
+
+```python
+@click.command()
+@click.option("--region", required=True)
+def main(region: str) -> None:
+    client = boto3.client("rds", region_name=region)
+    # ... orchestration
+```
+
+## Domain Modeling
+
+### Group values that travel together into a frozen dataclass
+
+When two or more values are always derived together and then passed around together, they're one concept, not loose
+helpers. The tell: a derivation order you have to remember (B needs A to compute) and the same pair threaded through
+several functions as positional args. Model them as a `@dataclass(frozen=True)` with a `@classmethod` factory, and hang
+operations that act only on that pair off the class as methods.
+
+**Good:**
+```python
+@dataclass(frozen=True)
+class DbTarget:
+    """Local compose postgres to load into — discovered at load time, not carried in the manifest."""
+    service: str
+    user: str
+
+    @classmethod
+    def discover(cls) -> "DbTarget":
+        # service first: reading POSTGRES_USER means execing into that very service.
+        svc = os.environ.get("DEVENV_DB_SERVICE", "postgres")
+        user = _read_container_env(svc, "POSTGRES_USER") or "postgres"
+        return cls(service=svc, user=user)
+
+    def recreate(self, dbname: str) -> None: ...
+
+target = DbTarget.discover()
+target.recreate("foo")
+```
+
+**Avoid** free functions that re-derive and re-thread the same pair at every call site:
+
+```python
+region = resolve_region()                # this dance repeats in every command
+bucket = resolve_bucket(region)          # caller must remember to pass region
+upload(region, bucket, "report.csv")
+```
+
+Use `__post_init__` for invariants (`if self.replicas < 1: raise ValueError(...)`).
+
+### Enums for a closed set, optionally with behavior attached
+
+When a value is one of a fixed set, model it as an `Enum` rather than bare strings or ints. If members have per-member
+behavior or data, hang it off the enum — carry data as the member's value, expose it via `@property`, and dispatch with
+`match` — instead of scattering `if kind == ...` chains across call sites. A plain enum with no methods is fine too; add
+behavior only when there is some.
+
+```python
+class Size(Enum):
+    SMALL = {"cpu": "500m", "memory": "2Gi"}
+    LARGE = {"cpu": "2", "memory": "8Gi"}
+
+    @property
+    def cpu(self) -> str:
+        return self.value["cpu"]
+
+class Runtime(Enum):
+    DEFAULT = "default"
+    DOCKER = "docker"
+
+    @property
+    def docker_dev(self) -> bool:
+        return self is Runtime.DOCKER
+```
+
 ## Comments
 
 Use comments sparingly. Don't comment on obvious code.
