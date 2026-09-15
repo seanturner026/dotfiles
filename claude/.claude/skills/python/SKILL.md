@@ -102,6 +102,37 @@ class Runtime(Enum):
         return self is Runtime.DOCKER
 ```
 
+**Reach for `StrEnum` when the value crosses a boundary** — a database column, a
+JSON payload, a query parameter. A `StrEnum` member *is* a `str`, so it binds into
+SQL, compares to a literal, and f-strings to its value with no conversion, which
+makes migrating existing string code free. Plain `Enum` needs `.value` at every
+edge and silently isn't equal to `"NEW"`.
+
+```python
+class State(StrEnum):
+    NEW = "NEW"
+    ANSWERED = "ANSWERED"
+```
+
+**Avoid** the two shapes this usually replaces:
+
+```python
+STATES = ("NEW", "ANSWERED")            # no completion; a typo is a runtime bug
+OUTCOMES = {"answered": (False, 1)}     # per-member data addressed by index
+```
+
+**Derive rather than restate.** If display order matters, let position in a tuple
+*be* the order, so two members can't claim the same slot and adding one doesn't
+renumber the rest. If "terminal" means "has no exits", compute it from the
+transition table instead of maintaining a second list.
+
+**But don't enum a vocabulary you don't own.** External payload field names,
+database column names, and third-party value sets (Slack message subtypes, HTTP
+header names) stay module constants. An enum there claims to enumerate something
+that changes without you, and `Subtype("something_new")` raises on exactly the
+unknown value you meant to default. Use a `frozenset` and a membership test, and
+say in a comment whose vocabulary it is.
+
 ## Comments
 
 Use comments sparingly. Don't comment on obvious code.
