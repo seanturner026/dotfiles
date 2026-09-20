@@ -46,8 +46,9 @@ return {
                 },
             },
             postgres_lsp = {},
-            terraformls = {},
             svelte = {},
+            terraformls = {},
+            tinymist = {},
             ts_ls = {},
             ty = {
                 settings = {
