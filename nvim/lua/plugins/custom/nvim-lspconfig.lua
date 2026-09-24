@@ -48,7 +48,13 @@ return {
             postgres_lsp = {},
             svelte = {},
             terraformls = {},
-            tinymist = {},
+            tinymist = {
+                settings = {
+                    formatterMode = "typstyle",
+                    exportPdf = "onType",
+                    semanticTokens = "disable",
+                },
+            },
             ts_ls = {},
             ty = {
                 settings = {

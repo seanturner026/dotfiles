@@ -1,4 +1,5 @@
 cargo install --locked bat # https://github.com/sharkdp/bat
+cargo install --locked typst-cli # https://github.com/typst/typst
 cargo install --locked zellij # https://zellij.dev/documentation/installation
 cargo install difftastic # https://github.com/wilfred/difftastic
 cargo install fd-find # https://github.com/sharkdp/fd#installation
