@@ -52,15 +52,6 @@ local function keys(config)
       { key = "Escape", action = "PopKeyTable" },
     },
   }
-
-  -- LEADER + number to activate that tab
-  for i = 1, 9 do
-    table.insert(config.keys, {
-      mods = "OPT",
-      key = tostring(i),
-      action = action.ActivateTab(i - 1),
-    })
-  end
 end
 
 return keys

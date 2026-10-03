@@ -36,6 +36,7 @@ brew install argocd \
     hadolint \
     hdf5 \
     helm \
+    herdr \
     iam-policy-json-to-terraform \
     iann0036/iamlive/iamlive \
     jq \
