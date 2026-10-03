@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p ~/.config/ghostty
+mkdir -p ~/.config/herdr
 mkdir -p ~/.config/tmux
 mkdir -p ~/.claude/skills
 
@@ -10,6 +12,7 @@ stow -v -R -t ~/ vim
 stow -v -R -t ~/ zsh
 stow -v -R -t ~/.config starship
 stow -v -R -t ~/.config/ghostty ghostty
+stow -v -R -t ~/.config/herdr herdr
 stow -v -R -t ~/.config/nvim nvim
 stow -v -R -t ~/.config/tmux tmux
 stow -v -R -t ~/.config/wezterm wezterm
