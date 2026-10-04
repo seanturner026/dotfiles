@@ -19,13 +19,20 @@ export PATH="/Users/sean/go/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# .zprofile already ran this for login shells.
+[[ -z $HOMEBREW_PREFIX ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  autoload -Uz compinit
-  compinit
-fi
+# oh-my-zsh runs compinit, so only extend FPATH here.
+FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
+
+# Source a tool's generated init script, regenerating it only when the binary changes.
+_cached_eval() {
+  local cache=~/.cache/zsh/${(j:-:)${@//[^a-zA-Z0-9]/}}.zsh
+  if [[ ! -s $cache || $commands[$1] -nt $cache ]]; then
+    mkdir -p ${cache:h} && "$@" >| $cache
+  fi
+  source $cache
+}
 
 source $HOME/.atuin/bin/env
 source $ZSH/oh-my-zsh.sh
@@ -40,22 +47,17 @@ if [ -f ~/.bash_functions ]; then
   . ~/.bash_functions
 fi
 
-source ~/.zshenv
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(starship init zsh)"
+_cached_eval starship init zsh --print-full-init
 
 if [[ "$CLAUDECODE" != "1" ]]; then
-    eval "$(zoxide init --cmd cd zsh)"
+    _cached_eval zoxide init --cmd cd zsh
 fi
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/vault vault
-source <(kubectl completion zsh)
+_cached_eval kubectl completion zsh
 
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh --disable-up-arrow)"
+_cached_eval atuin init zsh --disable-up-arrow
 
 # pnpm
 export PNPM_HOME="/Users/sean/Library/pnpm"
