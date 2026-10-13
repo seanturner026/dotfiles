@@ -8,11 +8,22 @@ name = "tokyo-night"
 
 [theme.custom]
 panel_bg = "reset"
+accent = "#82aaff"
 
 [keys]
-# opt+1..9 jumps straight to a tab (chat=1, nvim=2, shell=3), no prefix.
+# opt+1..9 jumps straight to a tab (chat · nvim · <repo>… · shell), no prefix.
 [keys.indexed]
 tabs = "alt"
+
+# Feature picker (bare `f`): features by what needs you, with pi status + PRs;
+# ENTER jumps to that workspace. Replaces the sidebar.
+# Runs as a plugin pane (pi repo: herdr-plugin/): argv, no shell, so it opens
+# without waiting for zsh; the popup is titled "workspaces".
+[[keys.command]]
+key = "ctrl+space"
+type = "plugin_action"
+command = "f.open-picker"
+description = "feature picker"
 
 # Floating shell over the current tab (ctrl+b t); closes when the shell exits.
 [[keys.command]]
@@ -22,6 +33,60 @@ command = "zsh"
 width = "80%"
 height = "80%"
 
+# Tabs by name: cmd+ctrl+<key> in WezTerm sends ctrl+alt+<key> (keys.lua).
+# c chat · v nvim · a s e r g repos 1-5 · p prs · t shell
+[[keys.command]]
+key = "ctrl+alt+c"
+type = "shell"
+command = "f tab c"
+
+[[keys.command]]
+key = "ctrl+alt+v"
+type = "shell"
+command = "f tab v"
+
+[[keys.command]]
+key = "ctrl+alt+a"
+type = "shell"
+command = "f tab a"
+
+[[keys.command]]
+key = "ctrl+alt+s"
+type = "shell"
+command = "f tab s"
+
+[[keys.command]]
+key = "ctrl+alt+e"
+type = "shell"
+command = "f tab e"
+
+[[keys.command]]
+key = "ctrl+alt+r"
+type = "shell"
+command = "f tab r"
+
+[[keys.command]]
+key = "ctrl+alt+g"
+type = "shell"
+command = "f tab g"
+
+[[keys.command]]
+key = "ctrl+alt+p"
+type = "shell"
+command = "f tab p"
+
+[[keys.command]]
+key = "ctrl+alt+t"
+type = "shell"
+command = "f tab t"
+
 [ui]
+# Sidebar hidden; ctrl+space (the f picker) shows status instead. ctrl+b b toggles it.
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "hidden"
 status_indicators = "symbols"
 pane_scrollbars = false
+
+# Every agent is pi, so the default second "agent" line is noise.
+[ui.sidebar.agents]
+rows = [["state_icon", "workspace", "tab"]]

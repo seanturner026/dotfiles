@@ -25,13 +25,23 @@ return {
                 vim.keymap.set(mode, l, r, opts)
             end
 
-            -- Navigation
+            -- Navigation. In a CodeDiff tab its hunks win: the right side is the
+            -- real file buffer, so (re)attaching here would shadow CodeDiff's ]c.
+            local function in_codediff()
+                local ok, lifecycle = pcall(require, "codediff.ui.lifecycle")
+                return ok and lifecycle.get_session(vim.api.nvim_get_current_tabpage()) ~= nil
+            end
+
             map({ "n", "v" }, "]c", function()
                 if vim.wo.diff then
                     return "]c"
                 end
                 vim.schedule(function()
-                    gs.next_hunk()
+                    if in_codediff() then
+                        require("codediff").next_hunk()
+                    else
+                        gs.next_hunk()
+                    end
                 end)
                 return "<Ignore>"
             end, { expr = true, desc = "Jump to next hunk" })
@@ -41,7 +51,11 @@ return {
                     return "[c"
                 end
                 vim.schedule(function()
-                    gs.prev_hunk()
+                    if in_codediff() then
+                        require("codediff").prev_hunk()
+                    else
+                        gs.prev_hunk()
+                    end
                 end)
                 return "<Ignore>"
             end, { expr = true, desc = "Jump to previous hunk" })

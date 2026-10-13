@@ -5,6 +5,7 @@ Anything that creates, changes, or deletes state: stop and ask me to run it.
 
 # Prompt Aliases
 
+- DRAQ: Don't research, ask questions
 - DTAA: Does this add anything?
 - MTOS: Make this one sentence.
 - SDTS: Slim down this selection.
@@ -56,3 +57,7 @@ sentence and wait. Don't go find the answer yourself.
   seconds, ask me.
 - Subagents are allowed, but launching one to go find something out is this same mistake at larger
   scale. Propose it first, then launch it.
+
+# Running tests and linters
+
+Don't run tests locally unless I ask. Linting and formatting are fine, as long as they don't use Docker.

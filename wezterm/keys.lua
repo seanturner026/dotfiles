@@ -17,6 +17,17 @@ local function keys(config)
     { mods = "CMD", key = "RightArrow", action = action.SendKey({ mods = "CTRL", key = "e" }) },
     { mods = "CMD", key = "Backspace", action = action.SendKey({ mods = "CTRL", key = "u" }) },
 
+    -- Herdr tabs by name (herdr/config.toml): cmd+ctrl+<key> → ctrl+alt+<key>
+    { mods = "CMD|CTRL", key = "c", action = action.SendKey({ mods = "CTRL|ALT", key = "c" }) }, -- chat
+    { mods = "CMD|CTRL", key = "v", action = action.SendKey({ mods = "CTRL|ALT", key = "v" }) }, -- nvim
+    { mods = "CMD|CTRL", key = "a", action = action.SendKey({ mods = "CTRL|ALT", key = "a" }) }, -- 1
+    { mods = "CMD|CTRL", key = "s", action = action.SendKey({ mods = "CTRL|ALT", key = "s" }) }, -- 2
+    { mods = "CMD|CTRL", key = "e", action = action.SendKey({ mods = "CTRL|ALT", key = "e" }) }, -- 3
+    { mods = "CMD|CTRL", key = "r", action = action.SendKey({ mods = "CTRL|ALT", key = "r" }) }, -- 4
+    { mods = "CMD|CTRL", key = "g", action = action.SendKey({ mods = "CTRL|ALT", key = "g" }) }, -- 5
+    { mods = "CMD|CTRL", key = "p", action = action.SendKey({ mods = "CTRL|ALT", key = "p" }) }, -- prs
+    { mods = "CMD|CTRL", key = "t", action = action.SendKey({ mods = "CTRL|ALT", key = "t" }) }, -- shell
+
     -- tmux-like bindings
     { mods = "LEADER", key = "c", action = action.SpawnTab("CurrentPaneDomain") },
     { mods = "LEADER", key = "x", action = action.CloseCurrentPane({ confirm = true }) },
