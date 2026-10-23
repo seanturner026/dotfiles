@@ -1,4 +1,64 @@
-font-family ="RobotoMono Nerd Font"
-font-size = 15
+# Ghostty config, symlinked to ~/.config/ghostty/config by stow.sh.
+# Ported from wezterm/ (keys.lua, options.lua). Full reference:
+# `ghostty +show-config --default --docs`; check with `ghostty +validate-config`.
 
-theme = tokyonight_moon
+# --- Look (options.lua) ---
+font-family = "RobotoMono Nerd Font"
+font-size = 15
+theme = TokyoNight Moon
+background-opacity = 1
+# WezTerm window_decorations = "RESIZE": no titlebar, still resizable.
+macos-titlebar-style = hidden
+window-padding-x = 2
+window-padding-y = 15,0
+
+# Left Option is Alt (WezTerm's default): Herdr's opt+1..9 tabs, opt+hjkl below.
+# Right Option still types special characters.
+macos-option-as-alt = left
+
+# --- Keys (keys.lua) ---
+keybind = ctrl+f=toggle_fullscreen
+
+# Newline without submitting (Claude Code, pi).
+keybind = shift+enter=text:\n
+
+# Word/line movement like iTerm.
+keybind = alt+arrow_left=esc:b
+keybind = alt+arrow_right=esc:f
+keybind = super+arrow_left=text:\x01
+keybind = super+arrow_right=text:\x05
+keybind = super+backspace=text:\x15
+
+# Herdr tabs by name (herdr/config.toml): cmd+ctrl+<key> sends ctrl+alt+<key>
+# (ESC + the control character). c chat · v nvim · a s e r g repos 1-5 · p prs · t shell
+keybind = super+ctrl+c=text:\x1b\x03
+keybind = super+ctrl+v=text:\x1b\x16
+keybind = super+ctrl+a=text:\x1b\x01
+keybind = super+ctrl+s=text:\x1b\x13
+keybind = super+ctrl+e=text:\x1b\x05
+keybind = super+ctrl+r=text:\x1b\x12
+keybind = super+ctrl+g=text:\x1b\x07
+keybind = super+ctrl+p=text:\x1b\x10
+keybind = super+ctrl+t=text:\x1b\x14
+
+# tmux-like leader (ctrl+a, then the key). ctrl+a twice sends a real ctrl+a.
+keybind = ctrl+a>ctrl+a=text:\x01
+keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>x=close_surface
+keybind = ctrl+a>b=previous_tab
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>v=new_split:right
+keybind = ctrl+a>s=new_split:down
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+
+# Resize mode: ctrl+a r, then hjkl until enter/escape.
+keybind = ctrl+a>r=activate_key_table:resize
+keybind = resize/h=resize_split:left,40
+keybind = resize/j=resize_split:down,40
+keybind = resize/k=resize_split:up,40
+keybind = resize/l=resize_split:right,40
+keybind = resize/enter=deactivate_key_table
+keybind = resize/escape=deactivate_key_table

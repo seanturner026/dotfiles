@@ -2,7 +2,6 @@
 
 export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
 export DISABLE_UPDATE_PROMPT=true
-export F_BASE="$HOME/code/github/wt"
 export GODOT="/Applications/Godot_mono.app/Contents/MacOS/Godot"
 export GOPATH="/Users/sean/go"
 export KUBE_EDITOR=nvim
