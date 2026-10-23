@@ -4,10 +4,12 @@ mkdir -p ~/.config/ghostty
 mkdir -p ~/.config/herdr
 mkdir -p ~/.config/tmux
 mkdir -p ~/.claude/skills
+mkdir -p ~/.terraform.d/plugin-cache
 
 stow -v -R -t ~/ bash
 stow -v -R -t ~/ claude
 stow -v -R -t ~/ git
+stow -v -R -t ~/ terraform
 stow -v -R -t ~/ vim
 stow -v -R -t ~/ zsh
 stow -v -R -t ~/.config starship
