@@ -60,4 +60,6 @@ sentence and wait. Don't go find the answer yourself.
 
 # Running tests and linters
 
-Don't run tests locally unless I ask. Linting and formatting are fine, as long as they don't use Docker.
+Don't run tests locally unless I ask, and don't ask to: push and let CI run them. Never build Docker images
+locally. Linting and formatting are fine, as long as they don't use Docker. A repo whose instructions
+require a local check (e.g. f's `just check`) is the exception.
