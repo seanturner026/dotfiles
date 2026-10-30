@@ -90,3 +90,8 @@ pane_scrollbars = false
 # Every agent is pi, so the default second "agent" line is noise.
 [ui.sidebar.agents]
 rows = [["state_icon", "workspace", "tab"]]
+
+[session]
+# Herdr's own resume runs a bare `claude --resume`, without f's settings/mod;
+# `f resume` restarts chats with them instead.
+resume_agents_on_restore = false
