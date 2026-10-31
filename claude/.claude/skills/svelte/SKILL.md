@@ -9,12 +9,15 @@ Project-specific SvelteKit conventions. Follow these whenever writing or reviewi
 
 ## Stack
 
-- **Svelte 5** with runes mode enforced (`compilerOptions.runes: true` in `svelte.config.js`)
-- **SvelteKit** with `adapter-static` — this is an SPA (SSR and prerender are disabled)
-- **TypeScript** — strict mode, `lang="ts"` on all `<script>` blocks
+SvelteKit 3 has no `svelte.config.js`: what used to be `config.kit.*` (plus `compilerOptions`) goes directly in the `sveltekit({ ... })` plugin call in `vite.config.ts`.
+
+- **Svelte 5** with runes mode enforced (`compilerOptions.runes: true` in the `sveltekit()` options)
+- **SvelteKit 3** with `adapter-static` — this is an SPA (SSR and prerender are disabled)
+- **TypeScript 6.0** — strict mode, `lang="ts"` on all `<script>` blocks. Pinned: 7.0 isn't supported by typescript-eslint yet
 - **Tailwind CSS v4** — imported via `@tailwindcss/vite` plugin, configured in `layout.css` with `@theme`
 - **Vitest** for unit tests, **Playwright** for e2e tests
 - **pnpm** as the package manager
+- Minimums for SvelteKit 3: Node 22.17, Vite 8, Svelte 5.57.1, `@sveltejs/vite-plugin-svelte` 7
 - **ESLint** + **Prettier** (with `prettier-plugin-svelte` and `prettier-plugin-tailwindcss`)
 
 ## Svelte 5 Runes
@@ -146,7 +149,7 @@ Use SvelteKit file-based routing. Each route is a directory under `src/routes/` 
 </script>
 ```
 
-Use `$app/state` (not `$app/stores`) for accessing page state:
+Use `$app/state` for page state (`$app/stores` was removed in SvelteKit 3):
 
 ```svelte
 <script lang="ts">
@@ -155,6 +158,16 @@ Use `$app/state` (not `$app/stores`) for accessing page state:
 
 <span>{page.url.pathname}</span>
 ```
+
+`page.url` is readonly. To change it, copy first: `const url = new URL(page.url)`.
+
+Other SvelteKit 3 renames to watch for:
+
+- `$app/environment` → `$app/env`; `$env/static/public` etc. → `$app/env/public` / `$app/env/private`
+- `goto` options: `invalidateAll` → `refreshAll`, `replaceState` → `replace`, `keepFocus` + `noScroll` → `reset: false`
+- `invalidateAll()` → `refreshAll()`; `pushState`/`replaceState` → `goto(url, { shallow: true, state })`
+- `base`/`assets`/`resolveRoute` from `$app/paths` are gone: use `resolve()` and `asset('foo.png')` (no leading slash)
+- `data-sveltekit-*` attributes take `false`, not `'off'`
 
 ## Styling
 
@@ -211,11 +224,11 @@ Run e2e tests: `pnpm test:e2e`
 
 1. `pnpm format` — auto-format with Prettier
 2. `pnpm lint` — run Prettier check + ESLint. **Repeat until clean** — fix any errors and re-run
-3. `pnpm check` — run svelte-check for type errors (env var errors from `$env/static/public` are expected if no `.env` file is present locally)
+3. `pnpm check` — run svelte-check for type errors (env var errors from `$app/env/public` are expected if no `.env` file is present locally)
 
 ## TypeScript
 
 - Use `lang="ts"` on all `<script>` blocks
 - Define prop types with `interface Props` (not inline)
-- Use SvelteKit's generated types from `.svelte-kit/` (extended by `tsconfig.json`)
-- Use `$lib/` alias for imports from `src/lib/`
+- `tsconfig.json` extends `$app/tsconfig` (not `.svelte-kit/tsconfig.json`) and must set its own `include`/`exclude`
+- Import from `src/lib/` via `#lib/...` with the file extension (`import { format } from '#lib/utils/format.ts'`). `$lib` no longer exists; `#lib` is declared under `imports` in `package.json`
