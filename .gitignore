@@ -1,3 +1,4 @@
 .DS_Store
 spell/
 nvim/copilot.enabled
+nvim/lua/f.lua
