@@ -58,6 +58,12 @@ sentence and wait. Don't go find the answer yourself.
 - Subagents are allowed, but launching one to go find something out is this same mistake at larger
   scale. Propose it first, then launch it.
 
+# Answers go at the end
+
+Answer my questions in your final message, after any tool work, even if you said it earlier
+between tool calls: I read the end of a response (often days later) and don't scroll back
+through code changes. Put the answer first in that message, before the summary of what you did.
+
 # Running tests and linters
 
 Don't run tests locally unless I ask, and don't ask to: push and let CI run them. Never build Docker images
