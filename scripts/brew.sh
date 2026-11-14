@@ -70,6 +70,7 @@ brew install argocd \
     tfsec \
     tmux \
     tree \
+    tuicr \
     watch \
     wget \
     wireshark \
