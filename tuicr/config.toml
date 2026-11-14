@@ -1,0 +1,8 @@
+# tuicr config, linked to ~/.config/tuicr/config.toml by stow.sh.
+# Reference: https://docs.rs/crate/tuicr/latest/source/docs/CONFIG.md
+
+wrap = true
+# f's review tabs (f review) rely on this to follow the agent's edits; f pauses
+# hidden tabs, so only the one on screen polls.
+diff_watch_interval_ms = 3000
+no_update_check = true

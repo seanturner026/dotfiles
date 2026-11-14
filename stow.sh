@@ -6,6 +6,7 @@ mkdir -p ~/.config/tmux
 mkdir -p ~/.claude/skills
 mkdir -p ~/.terraform.d/plugin-cache
 mkdir -p ~/.pi/agent
+mkdir -p ~/.config/tuicr
 
 stow -v -R -t ~/ bash
 stow -v -R -t ~/ claude
@@ -19,5 +20,6 @@ stow -v -R -t ~/.config/ghostty ghostty
 stow -v -R -t ~/.config/herdr herdr
 stow -v -R -t ~/.config/nvim nvim
 stow -v -R -t ~/.config/tmux tmux
+stow -v -R -t ~/.config/tuicr tuicr
 stow -v -R -t ~/.config/wezterm wezterm
 stow -v -R -t ~/Library/Application\ Support/Code/User vscode

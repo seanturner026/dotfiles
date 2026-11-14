@@ -10,7 +10,10 @@ background-opacity = 1
 # WezTerm window_decorations = "RESIZE": no titlebar, still resizable.
 macos-titlebar-style = hidden
 window-padding-x = 2
-window-padding-y = 15,0
+# No titlebar here, so no top inset (WezTerm's top = 15 clears its buttons). The
+# leftover below the last row takes the nearest cell's color instead of a band.
+window-padding-y = 0
+window-padding-color = extend
 
 # Left Option is Alt (WezTerm's default): Herdr's opt+1..9 tabs, opt+hjkl below.
 # Right Option still types special characters.
