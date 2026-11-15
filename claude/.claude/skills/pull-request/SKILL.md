@@ -66,56 +66,10 @@ A PR description is not a changelog. Omit anything the reviewer can see in ten s
 If the entire PR *is* housekeeping (e.g. a dedicated type-annotation cleanup), then describe it — but in one line:
 "Migrate type hints to 3.12-native syntax across `foo/`."
 
-**Also avoid:**
-
-- Filler: "This PR...", "The purpose of this PR is to...", "In order to...", "It's worth noting that..."
-- Restating the title in the first sentence of the body
-- Lists of every file touched
-
-## 4. Be brief
-
-Brevity is the soul of wit. Targets:
-
-- **Title:** under 70 characters. Imperative mood ("Add X", "Fix Y", "Rename Z"). Match the repo's convention if recent
-PRs show one (conventional commits, ticket prefix, etc. — check `gh pr list --limit 10`).
-- **Summary section:** 1–3 bullets or 2–3 sentences. If you can't summarize it that tightly, the PR is probably too big
-— flag that to the user.
-- **Test plan:** the minimum checks a reviewer should run or verify. Skip it if the template doesn't ask for it and CI
-covers everything.
-- **Whole description:** past ~200 words without a specific reason (complex migration, security-sensitive change,
-multi-step rollout), you're over budget. Cut.
-
-When in doubt, cut. The reviewer can ask.
-
-## 5. Before you submit
+## 4. Before you submit
 
 - Re-read the template sections — did you answer each question, or just restate the heading?
 - Scan your bullets — does each one tell the reviewer something the diff doesn't?
-- Check the title against recent PRs for style consistency.
+- Title: under 70 characters, imperative mood ("Add X", "Fix Y"), matching recent PRs' convention (`gh pr list --limit 10`).
 - Confirm no conversation artifacts leaked in ("as you asked me to...", "per our earlier discussion...") — the reviewer
 wasn't there.
-
-## Anti-examples
-
-**Bad** (ignores template, fluff, noise, restates the diff):
-
-> ## Summary
-> This PR updates the user service to improve the handling of authentication. I refactored the login function, cleaned
-> up some imports, fixed formatting, and updated the type hints. All tests pass.
->
-> ## Changes
-> - Modified `user_service.py`
-> - Modified `auth.py`
-> - Ran `ruff format`
-
-**Good** (uses template, captures the decision, trims noise):
-
-> ## Summary
-> Switch login to verify sessions against Redis instead of the DB. Cuts p99 login latency from ~140ms to ~12ms under
-> load.
->
-> Kept the DB write for audit purposes — removing it would need a schema change on `login_events`, out of scope here.
->
-> ## Test plan
-> - [x] Unit tests cover cache hit, cache miss, and Redis-down fallback
-> - [ ] Verify on staging that session TTL matches the existing cookie `Max-Age`

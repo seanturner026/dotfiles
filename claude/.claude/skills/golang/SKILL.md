@@ -1,11 +1,11 @@
 ---
 name: golang
-description: Go conventions, code style, and best practices for this repo. Trigger whenever the user is writing, reviewing, or modifying Go code — including adding handlers, models, tests, or any .go files.
+description: Go conventions, code style, and testing practices. Trigger whenever the user is writing, reviewing, or modifying Go code, including tests or any .go files.
 ---
 
 # Go Skill
 
-Project-specific Go conventions. Follow these whenever writing or reviewing `.go` files.
+Go conventions. Follow these whenever writing or reviewing `.go` files; a repo's own instructions win where they differ.
 
 ## Core Philosophy
 
@@ -110,9 +110,11 @@ When asked to "add tests" for a file or package, follow this approach:
 2. Identify the interfaces the code depends on and create minimal mocks
 3. Write table-driven tests covering: happy path, error cases, edge cases, and input validation
 4. Place tests in a `_test.go` file next to the source, using the `_test` package suffix
-5. Run `go test ./...` to verify
+5. Run `go test ./<pkg>/...` for the package you changed
 
-## File Organization
+## Lambda services
+
+Where the repo is a Lambda service:
 
 | Directory | Purpose |
 |---|---|
@@ -121,7 +123,7 @@ When asked to "add tests" for a file or package, follow this approach:
 | `internal/model/` | Domain types and request/response structs |
 | `internal/repo/` | Database data access |
 
-## Building
+### Building
 
 Strip debug symbols and DWARF info from Lambda binaries to reduce size:
 

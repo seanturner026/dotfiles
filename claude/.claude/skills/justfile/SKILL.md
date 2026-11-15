@@ -1,6 +1,6 @@
 ---
 name: justfile
-description: This skill should be used when the user asks to "add a just recipe", "add a justfile task", "update the justfile", "add a build command", "add a deploy step", or mentions "justfile" or "just" in the context of task running.
+description: Conventions for reading, adding, or changing recipes in a project's justfile (build, deploy, and other task-runner commands run with `just`).
 user-invocable: false
 ---
 

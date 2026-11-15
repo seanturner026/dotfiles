@@ -11,10 +11,6 @@ Anything that creates, changes, or deletes state: stop and ask me to run it.
 - SDTS: Slim down this selection.
 - WDYT: What do you think?
 
-# Pull Requests
-
-- If a `PULL_REQUEST_TEMPLATE` file exists in the repo (check `.github/`), use it as the PR description template when creating pull requests.
-
 # Code Comments
 
 Comment what the code can't say. Default to ONE line, BLUF.
@@ -66,6 +62,7 @@ through code changes. Put the answer first in that message, before the summary o
 
 # Running tests and linters
 
-Don't run tests locally unless I ask, and don't ask to: push and let CI run them. Never build Docker images
-locally. Linting and formatting are fine, as long as they don't use Docker. A repo whose instructions
+Don't run tests locally when they need a container or take minutes (Docker dev setups), and don't ask to: push
+and let CI run them. Fast native suites, like `go test` on the package you changed, are fine. Never build Docker
+images locally. Linting and formatting are fine, as long as they don't use Docker. A repo whose instructions
 require a local check (e.g. f's `just check`) is the exception.
