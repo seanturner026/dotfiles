@@ -66,3 +66,7 @@ Don't run tests locally when they need a container or take minutes (Docker dev s
 and let CI run them. Fast native suites, like `go test` on the package you changed, are fine. Never build Docker
 images locally. Linting and formatting are fine, as long as they don't use Docker. A repo whose instructions
 require a local check (e.g. f's `just check`) is the exception.
+
+# Skills
+
+Load the gh-stack skill before running any `gh stack` command.
